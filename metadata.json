@@ -1,0 +1,8 @@
+{
+  "name": "RSA Studio",
+  "description": "A world-class landing page, company profile, e-commerce for a web development agency, featuring an AI-powered project consultant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
