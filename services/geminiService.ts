@@ -2,11 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 const getApiKey = () => {
-  try {
-    return typeof process !== 'undefined' ? process.env.API_KEY : undefined;
-  } catch {
-    return undefined;
-  }
+  return import.meta.env.VITE_GEMINI_API_KEY || '';
 };
 
 const SYSTEM_INSTRUCTION = `Anda adalah asisten konsultan proyek ahli untuk "RSA Studio", sebuah agensi pembuatan website premium terkemuka di Indonesia. 
