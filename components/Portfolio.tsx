@@ -5,32 +5,35 @@ const projects = [
   {
     title: "Luxe Estate",
     category: "Real Estate Website",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
-    description: "Website properti mewah dengan sistem filter pencarian canggih."
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    description: "Website properti mewah dengan sistem filter pencarian canggih dan galeri HD."
   },
   {
     title: "HealthCore App",
     category: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
-    description: "Dashboard manajemen data kesehatan yang intuitif dan aman."
+    image: "https://images.unsplash.com/photo-1504868584819-f8e90526354c?auto=format&fit=crop&q=80&w=800",
+    description: "Dashboard manajemen data kesehatan yang intuitif dengan visualisasi grafik medis."
   },
   {
     title: "Nova Fashion",
     category: "E-Commerce Store",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-    description: "Toko online fashion modern dengan pengalaman checkout kilat."
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800",
+    description: "Toko online fashion modern dengan sistem checkout yang dioptimasi untuk mobile."
   },
   {
     title: "FinTech Pro",
     category: "Financial Services",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-    description: "Platform finansial untuk analisis data pasar secara real-time."
+    image: "https://images.unsplash.com/photo-1611974717537-48356a655200?auto=format&fit=crop&q=80&w=800",
+    description: "Platform finansial untuk analisis data pasar saham secara real-time dan aman."
   }
 ];
 
 const Portfolio: React.FC = () => {
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

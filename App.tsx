@@ -7,7 +7,7 @@ import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import AIConsultant from './components/AIConsultant';
-import { supabase } from './lib/supabase';
+import { supabase, isSupabaseConfigured } from './lib/supabase';
 
 const App: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -22,18 +22,28 @@ const App: React.FC = () => {
       email: formData.get('email'),
       service: formData.get('service'),
       message: formData.get('message'),
+      created_at: new Date().toISOString()
     };
 
     try {
-      const { error } = await supabase
-        .from('leads')
-        .insert([leadData]);
-
-      if (error) throw error;
+      if (isSupabaseConfigured()) {
+        // Simpan ke Supabase jika tersedia
+        const { error } = await supabase.from('leads').insert([leadData]);
+        if (error) throw error;
+      } else {
+        // Fallback: Simpan ke LocalStorage agar user tetap bisa "mencoba" fitur ini
+        console.warn('Supabase not configured. Saving to localStorage instead.');
+        const existingLeads = JSON.parse(localStorage.getItem('rsa_leads') || '[]');
+        existingLeads.push(leadData);
+        localStorage.setItem('rsa_leads', JSON.stringify(existingLeads));
+        
+        // Beri sedikit delay untuk simulasi loading
+        await new Promise(resolve => setTimeout(resolve, 800));
+      }
 
       setFormStatus('success');
-      // Reset status ke idle setelah 5 detik
       setTimeout(() => setFormStatus('idle'), 5000);
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
       console.error('Error saving lead:', error);
       setFormStatus('error');
@@ -53,7 +63,7 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <div className="text-5xl text-blue-500 mb-8 font-serif">“</div>
-            <p className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed italic">
+            <p className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed italic text-gray-200">
               "RSA Studio membantu kami melakukan digitalisasi seluruh operasional bisnis kami. Website yang mereka buat sangat cepat, responsif, dan yang terpenting: mendatangkan profit!"
             </p>
             <div className="flex flex-col items-center">
@@ -104,35 +114,35 @@ const App: React.FC = () => {
             </div>
             <form onSubmit={handleSubmit} className="md:w-1/2 space-y-4">
               {formStatus === 'success' ? (
-                <div className="h-full flex flex-col items-center justify-center py-10 animate-in zoom-in-95 duration-500">
+                <div className="h-full flex flex-col items-center justify-center py-10 animate-in zoom-in-95 duration-500 text-center">
                   <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-green-500/20">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-10 h-10 text-white">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Pesan Terkirim!</h3>
-                  <p className="text-gray-400 text-center">Data Anda telah tersimpan di sistem kami. Tim RSA Studio akan segera menghubungi Anda.</p>
+                  <p className="text-gray-400">Data Anda telah diterima. {!isSupabaseConfigured() && "(Mode Demo: Disimpan di Lokal)"}</p>
                 </div>
               ) : formStatus === 'error' ? (
-                <div className="h-full flex flex-col items-center justify-center py-10 text-red-400">
+                <div className="h-full flex flex-col items-center justify-center py-10 text-red-400 text-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-16 h-16 mb-4">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                   </svg>
                   <h3 className="text-xl font-bold mb-2">Terjadi Kesalahan</h3>
-                  <p className="text-center">Gagal mengirim pesan. Silakan coba lagi nanti.</p>
+                  <p>Gagal mengirim pesan. Silakan coba lagi nanti atau hubungi via WhatsApp.</p>
                 </div>
               ) : (
                 <>
-                  <input name="full_name" type="text" required placeholder="Nama Lengkap" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors" />
-                  <input name="email" type="email" required placeholder="Email Bisnis" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors" />
+                  <input name="full_name" type="text" required placeholder="Nama Lengkap" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
+                  <input name="email" type="email" required placeholder="Email Bisnis" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
                   <select name="service" required className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-gray-400 cursor-pointer">
-                    <option value="">Pilih Layanan</option>
-                    <option value="Landing Page">Landing Page</option>
-                    <option value="Company Profile">Company Profile</option>
-                    <option value="E-Commerce">E-Commerce</option>
-                    <option value="Custom System">Custom System</option>
+                    <option value="" className="bg-[#0b0f19]">Pilih Layanan</option>
+                    <option value="Landing Page" className="bg-[#0b0f19]">Landing Page</option>
+                    <option value="Company Profile" className="bg-[#0b0f19]">Company Profile</option>
+                    <option value="E-Commerce" className="bg-[#0b0f19]">E-Commerce</option>
+                    <option value="Custom System" className="bg-[#0b0f19]">Custom System</option>
                   </select>
-                  <textarea name="message" required placeholder="Ceritakan Proyek Anda" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
+                  <textarea name="message" required placeholder="Ceritakan Proyek Anda" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors resize-none text-white"></textarea>
                   <button 
                     type="submit"
                     disabled={formStatus === 'submitting'}
@@ -144,7 +154,7 @@ const App: React.FC = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        <span>Mengirim ke Database...</span>
+                        <span>Mengirim...</span>
                       </>
                     ) : (
                       <span>Kirim Pesan Sekarang</span>
@@ -158,8 +168,6 @@ const App: React.FC = () => {
       </section>
 
       <Footer />
-      
-      {/* Floating Elements */}
       <AIConsultant />
     </div>
   );

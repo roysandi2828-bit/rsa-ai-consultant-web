@@ -1,8 +1,13 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Always use const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const getApiKey = () => {
+  try {
+    return typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+  } catch {
+    return undefined;
+  }
+};
 
 const SYSTEM_INSTRUCTION = `Anda adalah asisten konsultan proyek ahli untuk "RSA Studio", sebuah agensi pembuatan website premium terkemuka di Indonesia. 
 Tujuan Anda adalah membantu calon klien memahami layanan kami dan memberikan solusi yang dipersonalisasi.
@@ -18,9 +23,24 @@ Berikan jawaban yang ramah, profesional, dan persuasif dalam Bahasa Indonesia.
 Arahkan mereka untuk mengisi formulir kontak di bawah halaman atau menghubungi via WhatsApp jika mereka ingin mendapatkan penawaran resmi dari RSA Studio.`;
 
 export class GeminiService {
+  private ai: GoogleGenAI | null = null;
+
+  private getAI() {
+    if (this.ai) return this.ai;
+    const apiKey = getApiKey();
+    if (!apiKey) return null;
+    this.ai = new GoogleGenAI({ apiKey });
+    return this.ai;
+  }
+
   async chat(message: string, history: { role: 'user' | 'model'; parts: { text: string }[] }[] = []) {
     try {
-      const response = await ai.models.generateContent({
+      const client = this.getAI();
+      if (!client) {
+        return "Halo! Maaf, kunci API AI belum dikonfigurasi. Namun, Anda tetap bisa melihat-lihat layanan kami atau menghubungi tim via WhatsApp.";
+      }
+
+      const response = await client.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: [
           ...history,
