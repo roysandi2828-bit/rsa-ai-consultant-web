@@ -57,3 +57,42 @@ npm run preview
 - **Netlify**: Add your environment variables in Site Settings → Build & Deploy → Environment
 
 Make sure to prefix all environment variables with `VITE_` for them to be accessible in the client-side code.
+
+## Troubleshooting
+
+### "Blank Page" or "Bad Gateway" Error
+
+If you see a blank page or bad gateway error after deployment:
+
+1. **Check Environment Variables**
+   - Verify that `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and `VITE_GEMINI_API_KEY` are set in your deployment platform
+   - Make sure the variable names have the `VITE_` prefix (case-sensitive)
+
+2. **Check Browser Console**
+   - Open DevTools (F12) → Console tab
+   - Look for error messages that will help identify the issue
+   - Check if dependencies are loading properly
+
+3. **Rebuild and Redeploy**
+   - Delete the build directory: `rm -rf dist/`
+   - Reinstall dependencies: `npm install`
+   - Build again: `npm run build`
+   - Push to your repository to trigger redeploy
+
+4. **Check Network Tab**
+   - Open DevTools → Network tab
+   - Verify that all files are loading (200 status)
+   - If assets return 404, your build output may be incomplete
+
+5. **Verify Node.js Version**
+   - Ensure your deployment platform is using Node.js 18+
+   - Vercel/Netlify usually handle this automatically
+
+### AI Chat Not Working
+- If the AI chat is not responding, ensure `VITE_GEMINI_API_KEY` is valid
+- You can test without it - the app will show a fallback message
+
+### Form Submissions Not Saving
+- Check that `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are correct
+- Verify your Supabase project has a `leads` table with columns: `full_name`, `email`, `service`, `message`, `created_at`
+- Without these, form data saves to localStorage as fallback

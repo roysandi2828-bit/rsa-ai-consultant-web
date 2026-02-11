@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -8,9 +8,19 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import AIConsultant from './components/AIConsultant';
 import { supabase, isSupabaseConfigured } from './lib/supabase';
+import { logDiagnostics, checkSupabaseConnection } from './lib/diagnostics';
+
+console.log('[v0] App component loading...');
+console.log('[v0] Supabase configured:', isSupabaseConfigured());
+logDiagnostics();
 
 const App: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    console.log('[v0] App component mounted successfully');
+    checkSupabaseConnection();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
