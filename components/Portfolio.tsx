@@ -3,6 +3,13 @@ import React from 'react';
 
 const projects = [
   {
+    title: "Quality Control 2 Dashboard",
+    category: "SaaS Dashboard",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    description: "Dashboard monitoring QC2 dengan validasi hasil real-time dan leaderboard agen.",
+    link: "https://qc-2-dashboard.vercel.app/"
+  },
+  {
     title: "Luxe Estate",
     category: "Real Estate Website",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
@@ -10,21 +17,24 @@ const projects = [
   },
   {
     title: "HealthCore App",
-    category: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e90526354c?auto=format&fit=crop&q=80&w=800",
-    description: "Dashboard manajemen data kesehatan yang intuitif dengan visualisasi grafik medis."
+    category: "SAAS DASHBOARD",
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b3f7?auto=format&fit=crop&q=80&w=800",
+    description: "Dashboard manajemen kesehatan terintegrasi dengan fitur monitoring pasien real-time, rekam medis digital, dan analitik data kesehatan untuk fasilitas medis modern.",
+    link: "https://healthcore-app.vercel.app/"
   },
   {
     title: "Nova Fashion",
-    category: "E-Commerce Store",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800",
-    description: "Toko online fashion modern dengan sistem checkout yang dioptimasi untuk mobile."
+    category: "E-COMMERCE STORE",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+    description: "Platform e-commerce fashion terdepan dengan katalog produk dinamis, sistem rekomendasi cerdas, integrasi pembayaran seamless, dan experience belanja yang sempurna.",
+    link: "https://nova-fashion.vercel.app/"
   },
   {
     title: "FinTech Pro",
-    category: "Financial Services",
-    image: "https://images.unsplash.com/photo-1611974717537-48356a655200?auto=format&fit=crop&q=80&w=800",
-    description: "Platform finansial untuk analisis data pasar saham secara real-time dan aman."
+    category: "FINANCIAL SERVICES",
+    image: "https://images.unsplash.com/photo-1552607528-c815c1a6e60c?auto=format&fit=crop&q=80&w=800",
+    description: "Solusi fintech enterprise dengan dashboard analitik pasar real-time, portfolio management otomatis, trading tools profesional, dan keamanan bank-level untuk investor.",
+    link: "https://fintech-pro.vercel.app/"
   }
 ];
 
@@ -59,8 +69,15 @@ const Portfolio: React.FC = () => {
           {projects.map((proj, idx) => (
             <div 
               key={idx} 
-              className="group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer bg-gray-900 border border-white/5" 
-              onClick={scrollToContact}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl bg-gray-900 border border-white/5" 
+              onClick={(e) => {
+                if ((proj as any).link && !(e.target as HTMLElement).closest('a')) {
+                  window.open((proj as any).link, '_blank');
+                } else {
+                  scrollToContact();
+                }
+              }}
+              style={{ cursor: (proj as any).link ? 'pointer' : 'pointer' }}
             >
               <img 
                 src={proj.image} 
@@ -72,8 +89,27 @@ const Portfolio: React.FC = () => {
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{proj.title}</h3>
                 <p className="text-gray-300 text-sm mb-6 max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{proj.description}</p>
                 <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                  <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Live Demo</span>
-                  <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Case Study</span>
+                  {(proj as any).link ? (
+                    <a 
+                      href={(proj as any).link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                    >
+                      Live Demo
+                    </a>
+                  ) : (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        scrollToContact();
+                      }}
+                      className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                    >
+                      Live Demo
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
