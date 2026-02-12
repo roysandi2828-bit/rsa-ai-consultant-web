@@ -18,20 +18,20 @@ const projects = [
   {
     title: "HealthCore App",
     category: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e90526354c?auto=format&fit=crop&q=80&w=800",
-    description: "Dashboard manajemen data kesehatan yang intuitif dengan visualisasi grafik medis."
+    image: "https://images.unsplash.com/photo-1576091160550-112173f7f869?auto=format&fit=crop&q=80&w=800",
+    description: "Platform manajemen kesehatan terintegrasi dengan monitoring pasien real-time, rekam medis digital, dan analitik data kesehatan yang komprehensif untuk fasilitas medis."
   },
   {
     title: "Nova Fashion",
     category: "E-Commerce Store",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800",
-    description: "Toko online fashion modern dengan sistem checkout yang dioptimasi untuk mobile."
+    image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800",
+    description: "Toko fashion online modern dengan katalog produk dinamis, sistem rekomendasi AI, integrasi pembayaran, dan pengalaman belanja yang dioptimasi untuk semua perangkat."
   },
   {
     title: "FinTech Pro",
     category: "Financial Services",
-    image: "https://images.unsplash.com/photo-1611974717537-48356a655200?auto=format&fit=crop&q=80&w=800",
-    description: "Platform finansial untuk analisis data pasar saham secara real-time dan aman."
+    image: "https://images.unsplash.com/photo-1579621970563-430f63602022?auto=format&fit=crop&q=80&w=800",
+    description: "Solusi fintech komprehensif dengan dashboard analitik pasar real-time, portfolio management, trading automation, dan keamanan tingkat enterprise untuk investor profesional."
   }
 ];
 
