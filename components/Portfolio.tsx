@@ -17,21 +17,24 @@ const projects = [
   },
   {
     title: "HealthCore App",
-    category: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f7f869?auto=format&fit=crop&q=80&w=800",
-    description: "Platform manajemen kesehatan terintegrasi dengan monitoring pasien real-time, rekam medis digital, dan analitik data kesehatan yang komprehensif untuk fasilitas medis."
+    category: "SAAS DASHBOARD",
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b3f7?auto=format&fit=crop&q=80&w=800",
+    description: "Dashboard manajemen kesehatan terintegrasi dengan fitur monitoring pasien real-time, rekam medis digital, dan analitik data kesehatan untuk fasilitas medis modern.",
+    link: "https://healthcore-app.vercel.app/"
   },
   {
     title: "Nova Fashion",
-    category: "E-Commerce Store",
-    image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800",
-    description: "Toko fashion online modern dengan katalog produk dinamis, sistem rekomendasi AI, integrasi pembayaran, dan pengalaman belanja yang dioptimasi untuk semua perangkat."
+    category: "E-COMMERCE STORE",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+    description: "Platform e-commerce fashion terdepan dengan katalog produk dinamis, sistem rekomendasi cerdas, integrasi pembayaran seamless, dan experience belanja yang sempurna.",
+    link: "https://nova-fashion.vercel.app/"
   },
   {
     title: "FinTech Pro",
-    category: "Financial Services",
-    image: "https://images.unsplash.com/photo-1579621970563-430f63602022?auto=format&fit=crop&q=80&w=800",
-    description: "Solusi fintech komprehensif dengan dashboard analitik pasar real-time, portfolio management, trading automation, dan keamanan tingkat enterprise untuk investor profesional."
+    category: "FINANCIAL SERVICES",
+    image: "https://images.unsplash.com/photo-1552607528-c815c1a6e60c?auto=format&fit=crop&q=80&w=800",
+    description: "Solusi fintech enterprise dengan dashboard analitik pasar real-time, portfolio management otomatis, trading tools profesional, dan keamanan bank-level untuk investor.",
+    link: "https://fintech-pro.vercel.app/"
   }
 ];
 
@@ -87,21 +90,25 @@ const Portfolio: React.FC = () => {
                 <p className="text-gray-300 text-sm mb-6 max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{proj.description}</p>
                 <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                   {(proj as any).link ? (
-                    <>
-                      <a 
-                        href={(proj as any).link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors"
-                      >
-                        Live Demo
-                      </a>
-                    </>
+                    <a 
+                      href={(proj as any).link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                    >
+                      Live Demo
+                    </a>
                   ) : (
-                    <>
-                      <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Live Demo</span>
-                      <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Case Study</span>
-                    </>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        scrollToContact();
+                      }}
+                      className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors cursor-pointer"
+                    >
+                      Live Demo
+                    </button>
                   )}
                 </div>
               </div>
