@@ -3,6 +3,13 @@ import React from 'react';
 
 const projects = [
   {
+    title: "Quality Control 2 Dashboard",
+    category: "SaaS Dashboard",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    description: "Dashboard monitoring QC2 dengan validasi hasil real-time dan leaderboard agen.",
+    link: "https://qc-2-dashboard.vercel.app/"
+  },
+  {
     title: "Luxe Estate",
     category: "Real Estate Website",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
@@ -59,8 +66,15 @@ const Portfolio: React.FC = () => {
           {projects.map((proj, idx) => (
             <div 
               key={idx} 
-              className="group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer bg-gray-900 border border-white/5" 
-              onClick={scrollToContact}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl bg-gray-900 border border-white/5" 
+              onClick={(e) => {
+                if ((proj as any).link && !(e.target as HTMLElement).closest('a')) {
+                  window.open((proj as any).link, '_blank');
+                } else {
+                  scrollToContact();
+                }
+              }}
+              style={{ cursor: (proj as any).link ? 'pointer' : 'pointer' }}
             >
               <img 
                 src={proj.image} 
@@ -72,8 +86,23 @@ const Portfolio: React.FC = () => {
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{proj.title}</h3>
                 <p className="text-gray-300 text-sm mb-6 max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{proj.description}</p>
                 <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                  <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Live Demo</span>
-                  <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Case Study</span>
+                  {(proj as any).link ? (
+                    <>
+                      <a 
+                        href={(proj as any).link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors"
+                      >
+                        Live Demo
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Live Demo</span>
+                      <span className="px-5 py-2 rounded-full glass-effect text-[10px] uppercase tracking-widest font-black border border-white/10 hover:bg-white/10 transition-colors">Case Study</span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
