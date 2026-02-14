@@ -5,7 +5,7 @@ const projects = [
   {
     title: "MotoParts",
     category: "E-COMMERCE STORE",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8n0hroms6xOYF6XkHty1OxFlbMFbcL.png",
     description: "Platform e-commerce spare part motor dengan katalog lengkap, harga kompetitif, dan sistem order mudah via WhatsApp untuk kemudahan pelanggan.",
     link: "https://moto-sparepart.vercel.app/"
   },
@@ -19,21 +19,21 @@ const projects = [
   {
     title: "HealthCore App",
     category: "SAAS DASHBOARD",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f7f869?auto=format&fit=crop&q=80&w=800",
+    image: "/healthcore-preview.jpg",
     description: "Platform manajemen kesehatan terintegrasi dengan monitoring pasien real-time, rekam medis digital, appointment scheduling, dan reporting komprehensif untuk klinik modern.",
     link: "https://healthcore-app.vercel.app/"
   },
   {
     title: "Nova Fashion",
     category: "E-COMMERCE STORE",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800",
+    image: "/nova-fashion-preview.jpg",
     description: "Toko fashion online dengan katalog produk premium, fitur wishlist, review produk, sistem pembayaran aman, dan pengiriman ke seluruh Indonesia.",
     link: "https://nova-fashion.vercel.app/"
   },
   {
     title: "FinTech Pro",
     category: "FINANCIAL SERVICES",
-    image: "https://images.unsplash.com/photo-1611974717537-48356a655200?auto=format&fit=crop&q=80&w=800",
+    image: "/fintech-preview.jpg",
     description: "Platform fintech untuk investasi dan trading dengan dashboard analitik pasar real-time, portfolio management, berita finansial, dan edukasi investasi lengkap.",
     link: "https://fintech-pro.vercel.app/"
   },
