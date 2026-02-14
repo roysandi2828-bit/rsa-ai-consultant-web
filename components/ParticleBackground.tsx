@@ -166,9 +166,9 @@ export function ParticleBackground() {
 
     offscreenCtx.fillStyle = "white"
     offscreenCtx.font = "bold 40px Arial"
-    offscreenCtx.textAlign = "right"
+    offscreenCtx.textAlign = "center"
     offscreenCtx.textBaseline = "middle"
-    offscreenCtx.fillText(word, canvas.width * 0.7, canvas.height * 0.6)
+    offscreenCtx.fillText(word, canvas.width * 0.55, canvas.height * 0.75)
 
     const imageData = offscreenCtx.getImageData(0, 0, canvas.width, canvas.height)
     const pixels = imageData.data
