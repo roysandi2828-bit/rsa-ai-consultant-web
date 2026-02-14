@@ -3,6 +3,13 @@ import React from 'react';
 
 const projects = [
   {
+    title: "MotoParts",
+    category: "E-COMMERCE STORE",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+    description: "Platform e-commerce spare part motor dengan katalog lengkap, harga kompetitif, dan sistem order mudah via WhatsApp untuk kemudahan pelanggan.",
+    link: "https://moto-sparepart.vercel.app/"
+  },
+  {
     title: "Quality Control 2 Dashboard",
     category: "SaaS Dashboard",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
@@ -10,31 +17,31 @@ const projects = [
     link: "https://qc-2-dashboard.vercel.app/"
   },
   {
-    title: "Luxe Estate",
-    category: "Real Estate Website",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
-    description: "Website properti mewah dengan sistem filter pencarian canggih dan galeri HD."
-  },
-  {
     title: "HealthCore App",
     category: "SAAS DASHBOARD",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b3f7?auto=format&fit=crop&q=80&w=800",
-    description: "Dashboard manajemen kesehatan terintegrasi dengan fitur monitoring pasien real-time, rekam medis digital, dan analitik data kesehatan untuk fasilitas medis modern.",
+    image: "https://images.unsplash.com/photo-1576091160550-112173f7f869?auto=format&fit=crop&q=80&w=800",
+    description: "Platform manajemen kesehatan terintegrasi dengan monitoring pasien real-time, rekam medis digital, appointment scheduling, dan reporting komprehensif untuk klinik modern.",
     link: "https://healthcore-app.vercel.app/"
   },
   {
     title: "Nova Fashion",
     category: "E-COMMERCE STORE",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
-    description: "Platform e-commerce fashion terdepan dengan katalog produk dinamis, sistem rekomendasi cerdas, integrasi pembayaran seamless, dan experience belanja yang sempurna.",
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800",
+    description: "Toko fashion online dengan katalog produk premium, fitur wishlist, review produk, sistem pembayaran aman, dan pengiriman ke seluruh Indonesia.",
     link: "https://nova-fashion.vercel.app/"
   },
   {
     title: "FinTech Pro",
     category: "FINANCIAL SERVICES",
-    image: "https://images.unsplash.com/photo-1552607528-c815c1a6e60c?auto=format&fit=crop&q=80&w=800",
-    description: "Solusi fintech enterprise dengan dashboard analitik pasar real-time, portfolio management otomatis, trading tools profesional, dan keamanan bank-level untuk investor.",
+    image: "https://images.unsplash.com/photo-1611974717537-48356a655200?auto=format&fit=crop&q=80&w=800",
+    description: "Platform fintech untuk investasi dan trading dengan dashboard analitik pasar real-time, portfolio management, berita finansial, dan edukasi investasi lengkap.",
     link: "https://fintech-pro.vercel.app/"
+  },
+  {
+    title: "Luxe Estate",
+    category: "REAL ESTATE WEBSITE",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    description: "Website properti mewah dengan sistem filter pencarian canggih, galeri foto HD 360, virtual tour, estimasi harga, dan konsultasi langsung dengan agen."
   }
 ];
 
