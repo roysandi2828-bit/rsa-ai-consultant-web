@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ParticleBackground } from './ParticleBackground';
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -8,22 +9,25 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Particle Background Animation */}
+      <ParticleBackground />
+      
       {/* Decorative Background Elements */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-start lg:pt-8">
           
           {/* Left Column: Text Content */}
-          <div className="order-2 lg:order-1 text-left">
+          <div className="order-2 lg:order-1 text-left pr-4 lg:pr-8">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 Jasa Pembuatan Website No. 1 di Indonesia
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
               Ubah Ide Bisnis Anda Menjadi <span className="gradient-text">Website Kelas Dunia</span>
             </h1>
-            <p className="text-xl text-gray-400 mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
               Halo, saya founder <span className="text-white font-semibold">RSA Studio</span>. Kami membangun website yang tidak hanya indah secara visual, tetapi juga dirancang khusus untuk meningkatkan konversi dan profit bisnis Anda secara signifikan.
             </p>
             
