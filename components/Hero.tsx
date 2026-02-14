@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ParticleBackground } from './ParticleBackground';
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -8,6 +9,9 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Particle Background Animation */}
+      <ParticleBackground />
+      
       {/* Decorative Background Elements */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
