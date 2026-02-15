@@ -1,5 +1,5 @@
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/genai";
 
 const getApiKey = () => {
   return import.meta.env.VITE_GEMINI_API_KEY || '';
@@ -19,47 +19,38 @@ Berikan jawaban yang ramah, profesional, dan persuasif dalam Bahasa Indonesia.
 Arahkan mereka untuk mengisi formulir kontak di bawah halaman atau menghubungi via WhatsApp jika mereka ingin mendapatkan penawaran resmi dari RSA Studio.`;
 
 export class GeminiService {
-  private genAI: GoogleGenerativeAI | null = null;
+  private ai: GoogleGenerativeAI | null = null;
 
-  private getGenAI() {
-    if (this.genAI) return this.genAI;
+  private getAI() {
+    if (this.ai) return this.ai;
     const apiKey = getApiKey();
     if (!apiKey) return null;
-    this.genAI = new GoogleGenerativeAI(apiKey);
-    return this.genAI;
+    this.ai = new GoogleGenerativeAI({ apiKey });
+    return this.ai;
   }
 
   async chat(message: string, history: Array<{ role: 'user' | 'model'; parts: { text: string }[] }> = []) {
     try {
-      const genAI = this.getGenAI();
-      if (!genAI) {
+      const ai = this.getAI();
+      if (!ai) {
         return "Halo! Maaf, kunci API AI belum dikonfigurasi. Namun, Anda tetap bisa melihat-lihat layanan kami atau menghubungi tim via WhatsApp.";
       }
 
-      const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-        systemInstruction: SYSTEM_INSTRUCTION
-      });
-
-      const contents = history.map(h => ({
-        role: h.role === 'model' ? 'model' : 'user',
-        parts: h.parts
-      })).concat([{
-        role: 'user' as const,
-        parts: [{ text: message }]
-      }]);
-
-      const result = await model.generateContent({
-        contents: contents,
-        generationConfig: {
-          temperature: 0.5,
-          topP: 0.9,
+      const response = await ai.models.generateContent({
+        model: 'gemini-pro',
+        contents: [
+          ...history,
+          { role: 'user', parts: [{ text: message }] }
+        ],
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+          temperature: 0.7,
+          topP: 0.95,
           topK: 40,
           maxOutputTokens: 500,
         }
       });
 
-      const response = await result.response;
       return response.text() || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
     } catch (error) {
       console.error("[v0] Gemini Error:", error);
