@@ -29,31 +29,28 @@ export class GeminiService {
     return this.ai;
   }
 
-  async chat(message: string, history: Array<{ role: 'user' | 'model'; parts: { text: string }[] }> = []) {
+  async chat(message: string, history: { role: 'user' | 'model'; parts: { text: string }[] }[] = []) {
     try {
-      const ai = this.getAI();
-      if (!ai) {
+      const client = this.getAI();
+      if (!client) {
         return "Halo! Maaf, kunci API AI belum dikonfigurasi. Namun, Anda tetap bisa melihat-lihat layanan kami atau menghubungi tim via WhatsApp.";
       }
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
+      const response = await client.models.generateContent({
+        model: 'gemini-3-flash-preview',
         contents: [
           ...history,
           { role: 'user', parts: [{ text: message }] }
         ],
-        generationConfig: {
+        config: {
           systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.7,
-          topP: 0.95,
-          topK: 40,
-          maxOutputTokens: 500,
-        }
+        },
       });
 
-      return response.text() || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
+      return response.text || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
     } catch (error) {
-      console.error("[v0] Gemini Error:", error);
+      console.error("Gemini Error:", error);
       return "Mohon maaf, terjadi kesalahan saat menghubungi asisten AI kami. Silakan coba sesaat lagi.";
     }
   }

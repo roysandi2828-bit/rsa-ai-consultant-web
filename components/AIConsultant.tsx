@@ -33,18 +33,9 @@ const AIConsultant: React.FC = () => {
         parts: [{ text: m.text }]
     }));
 
-    try {
-      const response = await geminiService.chat(userMsg, history);
-      setMessages(prev => [...prev, { role: 'model', text: response }]);
-    } catch (error) {
-      console.error("[v0] Chat error:", error);
-      setMessages(prev => [...prev, { 
-        role: 'model', 
-        text: 'Mohon maaf, terjadi kesalahan. Silakan coba lagi atau hubungi kami via WhatsApp.' 
-      }]);
-    } finally {
-      setIsLoading(false);
-    }
+    const response = await geminiService.chat(userMsg, history);
+    setMessages(prev => [...prev, { role: 'model', text: response }]);
+    setIsLoading(false);
   };
 
   return (
