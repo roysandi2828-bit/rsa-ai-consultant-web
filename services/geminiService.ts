@@ -1,5 +1,5 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const getApiKey = () => {
   return import.meta.env.VITE_GEMINI_API_KEY || '';
@@ -19,42 +19,48 @@ Berikan jawaban yang ramah, profesional, dan persuasif dalam Bahasa Indonesia.
 Arahkan mereka untuk mengisi formulir kontak di bawah halaman atau menghubungi via WhatsApp jika mereka ingin mendapatkan penawaran resmi dari RSA Studio.`;
 
 export class GeminiService {
-  private ai: GoogleGenAI | null = null;
+  private genAI: GoogleGenerativeAI | null = null;
 
-  private getAI() {
-    if (this.ai) return this.ai;
+  private getGenAI() {
+    if (this.genAI) return this.genAI;
     const apiKey = getApiKey();
     if (!apiKey) return null;
-    this.ai = new GoogleGenAI({ apiKey });
-    return this.ai;
+    this.genAI = new GoogleGenerativeAI(apiKey);
+    return this.genAI;
   }
 
-  async chat(message: string, history: { role: 'user' | 'model'; parts: { text: string }[] }[] = []) {
+  async chat(message: string, history: Array<{ role: 'user' | 'model'; parts: { text: string }[] }> = []) {
     try {
-      const client = this.getAI();
-      if (!client) {
+      const genAI = this.getGenAI();
+      if (!genAI) {
         return "Halo! Maaf, kunci API AI belum dikonfigurasi. Namun, Anda tetap bisa melihat-lihat layanan kami atau menghubungi tim via WhatsApp.";
       }
 
-      console.log("[v0] Sending request to Gemini API");
-      
-      const response = await client.models.generateContent({
-        model: 'gemini-2.0-flash',
-        contents: [
-          ...history,
-          { role: 'user', parts: [{ text: message }] }
-        ],
-        config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
+      const model = genAI.getGenerativeModel({ 
+        model: "gemini-1.5-flash",
+        systemInstruction: SYSTEM_INSTRUCTION
+      });
+
+      const contents = history.map(h => ({
+        role: h.role === 'model' ? 'model' : 'user',
+        parts: h.parts
+      })).concat([{
+        role: 'user' as const,
+        parts: [{ text: message }]
+      }]);
+
+      const result = await model.generateContent({
+        contents: contents,
+        generationConfig: {
           temperature: 0.5,
           topP: 0.9,
           topK: 40,
           maxOutputTokens: 500,
-        },
+        }
       });
 
-      console.log("[v0] Received response from Gemini API");
-      return response.text || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
+      const response = await result.response;
+      return response.text() || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
     } catch (error) {
       console.error("[v0] Gemini Error:", error);
       return "Mohon maaf, terjadi kesalahan saat menghubungi asisten AI kami. Silakan coba sesaat lagi.";
