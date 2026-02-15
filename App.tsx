@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import AIConsultant from './components/AIConsultant';
@@ -68,23 +69,8 @@ const App: React.FC = () => {
       <Services />
       <Portfolio />
       
-      {/* Testimonial Section */}
-      <section className="py-24 glass-effect">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-5xl text-blue-500 mb-8 font-serif">“</div>
-            <p className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed italic text-gray-200">
-              "RSA Studio membantu kami melakukan digitalisasi seluruh operasional bisnis kami. Website yang mereka buat sangat cepat, responsif, dan yang terpenting: mendatangkan profit!"
-            </p>
-            <div className="flex flex-col items-center">
-              <img src="https://picsum.photos/80/80?random=10" alt="CEO" className="w-20 h-20 rounded-full mb-4 border-2 border-blue-500 shadow-xl" />
-              <h5 className="font-bold text-xl text-white">Budi Santoso</h5>
-              <span className="text-gray-400 text-sm">CEO of Global Logistic Indo</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Testimonials />
+      
       <Pricing />
       
       {/* Contact Section */}
