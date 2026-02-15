@@ -36,21 +36,27 @@ export class GeminiService {
         return "Halo! Maaf, kunci API AI belum dikonfigurasi. Namun, Anda tetap bisa melihat-lihat layanan kami atau menghubungi tim via WhatsApp.";
       }
 
+      console.log("[v0] Sending request to Gemini API");
+      
       const response = await client.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.0-flash',
         contents: [
           ...history,
           { role: 'user', parts: [{ text: message }] }
         ],
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.7,
+          temperature: 0.5,
+          topP: 0.9,
+          topK: 40,
+          maxOutputTokens: 500,
         },
       });
 
+      console.log("[v0] Received response from Gemini API");
       return response.text || "Maaf, saya sedang mengalami kendala teknis. Silakan hubungi tim RSA Studio langsung.";
     } catch (error) {
-      console.error("Gemini Error:", error);
+      console.error("[v0] Gemini Error:", error);
       return "Mohon maaf, terjadi kesalahan saat menghubungi asisten AI kami. Silakan coba sesaat lagi.";
     }
   }
