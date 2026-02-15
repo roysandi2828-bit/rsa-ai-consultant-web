@@ -1,5 +1,5 @@
 
-import { GoogleGenerativeAI } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
 const getApiKey = () => {
   return import.meta.env.VITE_GEMINI_API_KEY || '';
@@ -19,13 +19,13 @@ Berikan jawaban yang ramah, profesional, dan persuasif dalam Bahasa Indonesia.
 Arahkan mereka untuk mengisi formulir kontak di bawah halaman atau menghubungi via WhatsApp jika mereka ingin mendapatkan penawaran resmi dari RSA Studio.`;
 
 export class GeminiService {
-  private ai: GoogleGenerativeAI | null = null;
+  private ai: GoogleGenAI | null = null;
 
   private getAI() {
     if (this.ai) return this.ai;
     const apiKey = getApiKey();
     if (!apiKey) return null;
-    this.ai = new GoogleGenerativeAI({ apiKey });
+    this.ai = new GoogleGenAI({ apiKey });
     return this.ai;
   }
 
@@ -37,12 +37,12 @@ export class GeminiService {
       }
 
       const response = await ai.models.generateContent({
-        model: 'gemini-pro',
+        model: 'gemini-2.0-flash',
         contents: [
           ...history,
           { role: 'user', parts: [{ text: message }] }
         ],
-        config: {
+        generationConfig: {
           systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.7,
           topP: 0.95,
