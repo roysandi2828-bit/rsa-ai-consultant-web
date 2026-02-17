@@ -1,25 +1,8 @@
 User-agent: *
 Allow: /
+
 Disallow: /admin
 Disallow: /.next
 Disallow: /node_modules
 
 Sitemap: https://rsastudio.vercel.app/sitemap.xml
-
-# Google
-User-agent: Googlebot
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Allow crawling of static assets
-User-agent: *
-Allow: *.js
-Allow: *.css
-Allow: *.jpg
-Allow: *.jpeg
-Allow: *.png
-Allow: *.gif
-Allow: *.svg
