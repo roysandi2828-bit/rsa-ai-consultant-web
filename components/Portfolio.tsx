@@ -17,11 +17,11 @@ const projects = [
     link: "https://qc-2-dashboard.vercel.app/"
   },
   {
-    title: "HealthCore App",
-    category: "SAAS DASHBOARD",
-    image: "/healthcore-preview.jpg",
-    description: "Platform manajemen kesehatan terintegrasi dengan monitoring pasien real-time, rekam medis digital, appointment scheduling, dan reporting komprehensif untuk klinik modern.",
-    link: "https://healthcore-app.vercel.app/"
+    title: "Fit-RSA",
+    category: "FITNESS APP",
+    image: "/fit-rsa-preview.jpg",
+    description: "Personal Workout Generator dengan AI-powered personalized workout plans, real-time progress tracking, dan science-backed training programs untuk mencapai fitness goals Anda.",
+    link: "https://fit-rsa.vercel.app/"
   },
   {
     title: "Nova Fashion",
