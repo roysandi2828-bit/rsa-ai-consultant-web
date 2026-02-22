@@ -24,11 +24,11 @@ const projects = [
     link: "https://fit-rsa.vercel.app/"
   },
   {
-    title: "Nova Fashion",
+    title: "RSA Fashion",
     category: "E-COMMERCE STORE",
-    image: "/nova-fashion-preview.jpg",
-    description: "Toko fashion online dengan katalog produk premium, fitur wishlist, review produk, sistem pembayaran aman, dan pengiriman ke seluruh Indonesia.",
-    link: "https://nova-fashion.vercel.app/"
+    image: "/rsa-fashion-preview.jpg",
+    description: "Platform fashion e-commerce dengan koleksi tren terkini, fitur wishlist, ulasan produk, sistem pembayaran aman, dan pengiriman ke seluruh nusantara.",
+    link: "https://rsa-fashion-app.vercel.app/"
   },
   {
     title: "FinTech Pro",
