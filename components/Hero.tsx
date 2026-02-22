@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ParticleBackground } from './ParticleBackground';
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -9,14 +8,26 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-      {/* Particle Background Animation */}
-      <ParticleBackground />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Video Overlay for Darkening */}
+      <div className="absolute inset-0 bg-black/40" style={{ zIndex: 1 }}></div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-start lg:pt-8">
 
           {/* Left Column: Text Content */}
