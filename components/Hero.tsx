@@ -28,10 +28,10 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-start lg:pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 items-center lg:items-start lg:pt-8">
 
           {/* Left Column: Text Content */}
-          <div className="order-2 lg:order-1 text-left pr-4 lg:pr-8">
+          <div className="order-2 lg:order-1 text-left pr-4 lg:pr-4">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 AI-Powered Web Development & Automation
             </div>
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: User Photo */}
-          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
+          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-start px-4 md:px-0 -ml-2 lg:-ml-8">
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
 
