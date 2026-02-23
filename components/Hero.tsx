@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 AI-Powered Web Development & Automation
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
               Ubah Ide Bisnis Anda Menjadi <span className="gradient-text">Website Kelas Dunia</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
@@ -57,13 +57,26 @@ const Hero: React.FC = () => {
               </button>
             </div>
 
-            <div className="mt-12 flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all">
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted By:</span>
-              <div className="flex space-x-4">
-                <img src="https://picsum.photos/80/30?grayscale&random=1" alt="Partner" className="h-6" />
-                <img src="https://picsum.photos/80/30?grayscale&random=2" alt="Partner" className="h-6" />
-                <img src="https://picsum.photos/80/30?grayscale&random=3" alt="Partner" className="h-6" />
+            <div className="mt-12 flex flex-col items-start space-y-6">
+              <div className="flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all">
+                <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted By:</span>
+                <div className="flex space-x-4">
+                  <img src="https://picsum.photos/80/30?grayscale&random=1" alt="Partner" className="h-6" />
+                  <img src="https://picsum.photos/80/30?grayscale&random=2" alt="Partner" className="h-6" />
+                  <img src="https://picsum.photos/80/30?grayscale&random=3" alt="Partner" className="h-6" />
+                </div>
               </div>
+
+              {/* WhatsApp Contact */}
+              <a
+                href="https://wa.me/62812345678?text=Halo%20Roy%20Sandi%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-white font-semibold hover:text-green-400 transition-colors group"
+              >
+                <span className="text-sm md:text-base">📱 Hubungi via WhatsApp: +62 812-345-678</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </div>
           </div>
 
@@ -72,9 +85,9 @@ const Hero: React.FC = () => {
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
 
-            <div className="relative z-10 w-full max-w-xs lg:max-w-sm">
+            <div className="relative z-10 w-full max-w-sm lg:max-w-lg">
               {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[500px]">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[600px]">
                 <img
                   src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
                   alt="Founder RSA Studio"
