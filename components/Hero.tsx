@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ParticleBackground } from './ParticleBackground';
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -9,22 +8,34 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-      {/* Particle Background Animation */}
-      <ParticleBackground />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Video Overlay for Darkening */}
+      <div className="absolute inset-0 bg-black/40" style={{ zIndex: 1 }}></div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-start lg:pt-8">
+      <div className="container mx-auto px-6 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-center lg:pt-0">
 
           {/* Left Column: Text Content */}
-          <div className="order-2 lg:order-1 text-left pr-4 lg:pr-8">
+          <div className="order-2 lg:order-1 text-left">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 AI-Powered Web Development & Automation
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
               Ubah Ide Bisnis Anda Menjadi <span className="gradient-text">Website Kelas Dunia</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
@@ -57,17 +68,17 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: User Photo */}
-          <div className="order-1 lg:order-2 relative group px-4 md:px-0">
+          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 w-full max-w-md lg:max-w-2xl">
               {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[700px]">
                 <img
                   src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
                   alt="Founder RSA Studio"
-                  className="w-full h-auto aspect-[4/5] object-cover"
+                  className="w-full h-full object-cover"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-40"></div>
