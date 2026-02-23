@@ -68,13 +68,13 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: User Photo */}
-          <div className="order-1 lg:order-2 relative group px-4 md:px-0">
+          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 w-full max-w-xs lg:max-w-sm">
               {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[600px]">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[500px]">
                 <img
                   src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
                   alt="Founder RSA Studio"
