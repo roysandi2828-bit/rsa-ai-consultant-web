@@ -28,10 +28,10 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 items-center lg:items-start lg:pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-center lg:pt-0">
 
           {/* Left Column: Text Content */}
-          <div className="order-2 lg:order-1 text-left pr-4 lg:pr-4">
+          <div className="order-2 lg:order-1 text-left">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 AI-Powered Web Development & Automation
             </div>
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
               </button>
             </div>
 
-            <div className="mt-12 flex flex-col items-start space-y-6">
+            <div className="mt-16 flex flex-col items-start space-y-8">
               <div className="flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all">
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted By:</span>
                 <div className="flex space-x-4">
@@ -72,22 +72,22 @@ const Hero: React.FC = () => {
                 href="https://wa.me/62812345678?text=Halo%20Roy%20Sandi%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-white font-semibold hover:text-green-400 transition-colors group"
+                className="flex items-center space-x-3 text-white font-semibold hover:text-green-400 transition-colors group text-lg"
               >
-                <span className="text-sm md:text-base">📱 Hubungi via WhatsApp: +62 812-345-678</span>
+                <span>Hubungi via WhatsApp: +62 812-345-678</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
           </div>
 
           {/* Right Column: User Photo */}
-          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-start px-4 md:px-0 -ml-2 lg:-ml-8">
+          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
 
-            <div className="relative z-10 w-full max-w-sm lg:max-w-lg">
+            <div className="relative z-10 w-full max-w-md lg:max-w-2xl">
               {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[600px]">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[700px]">
                 <img
                   src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
                   alt="Founder RSA Studio"
