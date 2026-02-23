@@ -57,26 +57,13 @@ const Hero: React.FC = () => {
               </button>
             </div>
 
-            <div className="mt-16 flex flex-col items-start space-y-8">
-              <div className="flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all">
-                <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted By:</span>
-                <div className="flex space-x-4">
-                  <img src="https://picsum.photos/80/30?grayscale&random=1" alt="Partner" className="h-6" />
-                  <img src="https://picsum.photos/80/30?grayscale&random=2" alt="Partner" className="h-6" />
-                  <img src="https://picsum.photos/80/30?grayscale&random=3" alt="Partner" className="h-6" />
-                </div>
+            <div className="mt-12 flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all">
+              <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted By:</span>
+              <div className="flex space-x-4">
+                <img src="https://picsum.photos/80/30?grayscale&random=1" alt="Partner" className="h-6" />
+                <img src="https://picsum.photos/80/30?grayscale&random=2" alt="Partner" className="h-6" />
+                <img src="https://picsum.photos/80/30?grayscale&random=3" alt="Partner" className="h-6" />
               </div>
-
-              {/* WhatsApp Contact */}
-              <a
-                href="https://wa.me/62812345678?text=Halo%20Roy%20Sandi%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-white font-semibold hover:text-green-400 transition-colors group text-lg"
-              >
-                <span>Hubungi via WhatsApp: +62 812-345-678</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
             </div>
           </div>
 
