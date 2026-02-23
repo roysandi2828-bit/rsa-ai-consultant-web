@@ -74,11 +74,11 @@ const Hero: React.FC = () => {
 
             <div className="relative z-10">
               {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[600px]">
                 <img
                   src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
                   alt="Founder RSA Studio"
-                  className="w-full h-auto aspect-[4/5] object-cover"
+                  className="w-full h-full object-cover"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-40"></div>
