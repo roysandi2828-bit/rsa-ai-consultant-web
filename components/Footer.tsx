@@ -23,7 +23,12 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com" className="w-10 h-10 rounded-full glass-effect flex items-center justify-center hover:bg-blue-600 transition-all hover:scale-110">
                 <span className="text-[10px] font-bold">IG</span>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full glass-effect flex items-center justify-center hover:bg-blue-600 transition-all hover:scale-110">
+              <a 
+                href="https://wa.me/6281399855043?text=Halo%20RSA%20Studio%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full glass-effect flex items-center justify-center hover:bg-green-600 transition-all hover:scale-110"
+              >
                 <span className="text-[10px] font-bold">WA</span>
               </a>
             </div>

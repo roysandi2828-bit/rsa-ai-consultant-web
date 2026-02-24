@@ -95,7 +95,12 @@ const App: React.FC = () => {
                     <div className="font-bold">halo@rsastudio.id</div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 group cursor-pointer">
+                <a 
+                  href="https://wa.me/6281399855043?text=Halo%20RSA%20Studio%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 group cursor-pointer hover:opacity-80 transition-opacity"
+                >
                   <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center text-green-400 group-hover:bg-green-600 group-hover:text-white transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.023c.09-.457.133-.923.133-1.393 0-.14-.006-.279-.017-.417C4.161 15.688 3 13.978 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
@@ -105,7 +110,7 @@ const App: React.FC = () => {
                     <div className="text-sm text-gray-400">WhatsApp</div>
                     <div className="font-bold">+62 813 9985 5043</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <form onSubmit={handleSubmit} className="md:w-1/2 space-y-4">
