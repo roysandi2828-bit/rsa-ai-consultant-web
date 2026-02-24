@@ -47,7 +47,7 @@ const App: React.FC = () => {
         const existingLeads = JSON.parse(localStorage.getItem('rsa_leads') || '[]');
         existingLeads.push(leadData);
         localStorage.setItem('rsa_leads', JSON.stringify(existingLeads));
-        
+
         // Beri sedikit delay untuk simulasi loading
         await new Promise(resolve => setTimeout(resolve, 800));
       }
@@ -68,11 +68,11 @@ const App: React.FC = () => {
       <Hero />
       <Services />
       <Portfolio />
-      
+
       <Testimonials />
-      
+
       <Pricing />
-      
+
       {/* Contact Section */}
       <section id="contact" className="py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] -z-10"></div>
@@ -92,10 +92,10 @@ const App: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-400">Email Kami</div>
-                    <div className="font-bold">halo@rsastudio.id</div>
+                    <div className="font-bold">roysandi30@gmail.com</div>
                   </div>
                 </div>
-                <a 
+                <a
                   href="https://wa.me/6281399855043?text=Halo%20RSA%20Studio%2C%20saya%20ingin%20mendiskusikan%20project%20website%20saya."
                   target="_blank"
                   rel="noopener noreferrer"
@@ -144,7 +144,7 @@ const App: React.FC = () => {
                     <option value="Custom System" className="bg-[#0b0f19]">Custom System</option>
                   </select>
                   <textarea name="message" required placeholder="Ceritakan Proyek Anda" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors resize-none text-white"></textarea>
-                  <button 
+                  <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
                     className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-xl shadow-blue-500/30 active:scale-95 disabled:opacity-50 flex items-center justify-center space-x-2"
