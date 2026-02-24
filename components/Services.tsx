@@ -3,8 +3,8 @@ import React from 'react';
 
 const services = [
   {
-    title: "Landing Page",
-    description: "Website satu halaman yang dirancang khusus untuk meningkatkan konversi kampanye marketing Anda.",
+    title: "Website Professional",
+    description: "Website profesional yang dirancang khusus untuk meningkatkan konversi kampanye marketing dan membangun kredibilitas bisnis Anda.",
     icon: "🎯"
   },
   {
