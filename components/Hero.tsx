@@ -1,7 +1,22 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Ensure video plays on all devices
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log('[v0] Video autoplay prevented:', error);
+        });
+      }
+    }
+  }, []);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -10,14 +25,18 @@ const Hero: React.FC = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
       {/* Video Background */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
+        webkit-playsinline="true"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, WebkitPlaysinline: 'true' as any }}
+        controlsList="nodownload"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
 
       {/* Video Overlay for Darkening */}
