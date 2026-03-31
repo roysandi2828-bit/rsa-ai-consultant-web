@@ -7,12 +7,24 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Ensure video plays on all devices
+      // Force video play for iOS and other devices
+      video.muted = true; // Ensure muted for autoplay
       const playPromise = video.play();
+      
       if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log('[v0] Video autoplay prevented:', error);
-        });
+        playPromise
+          .then(() => {
+            console.log('[v0] Video playing successfully');
+          })
+          .catch((error) => {
+            console.log('[v0] Video autoplay prevented:', error);
+            // Fallback: try playing on user interaction
+            const playOnInteraction = () => {
+              video.play().catch(() => {});
+              document.removeEventListener('click', playOnInteraction);
+            };
+            document.addEventListener('click', playOnInteraction);
+          });
       }
     }
   }, []);
@@ -30,9 +42,13 @@ const Hero: React.FC = () => {
         muted
         loop
         playsInline
-        webkit-playsinline="true"
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, WebkitPlaysinline: 'true' as any }}
+        style={{ 
+          zIndex: 0, 
+          WebkitPlaysinline: 'true' as any,
+          WebkitUserSelect: 'none' as any
+        }}
         controlsList="nodownload"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
