@@ -11,7 +11,6 @@ import AIConsultant from './components/AIConsultant';
 import { supabase, isSupabaseConfigured } from './lib/supabase';
 import { logDiagnostics, checkSupabaseConnection } from './lib/diagnostics';
 import { LanguageProvider } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
 
 console.log('[v0] App component loading...');
 console.log('[v0] Supabase configured:', isSupabaseConfigured());
@@ -66,9 +65,8 @@ const App: React.FC = () => {
 
   return (
     <LanguageProvider>
-      <ThemeProvider>
-        <div className="relative selection:bg-blue-500/30 selection:text-blue-200">
-          <Header />
+      <div className="relative selection:bg-blue-500/30 selection:text-blue-200">
+        <Header />
       <Hero />
       <Services />
       <Portfolio />
@@ -174,8 +172,7 @@ const App: React.FC = () => {
 
       <Footer />
       <AIConsultant />
-        </div>
-      </ThemeProvider>
+      </div>
     </LanguageProvider>
   );
 };
