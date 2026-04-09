@@ -19,12 +19,20 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (savedTheme) {
       setThemeState(savedTheme);
       document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     } else {
       // Use system preference if available
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const initialTheme: Theme = prefersDark ? 'dark' : 'light';
       setThemeState(initialTheme);
       document.documentElement.setAttribute('data-theme', initialTheme);
+      if (initialTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
     }
   }, []);
 
@@ -32,6 +40,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setThemeState(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // Apply/remove dark class for Tailwind dark mode support
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
 
   const toggleTheme = () => {

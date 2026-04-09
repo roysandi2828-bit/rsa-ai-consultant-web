@@ -84,9 +84,60 @@
         .animate-marquee-right {
             animation: marquee-right 60s linear infinite;
         }
+
+        /* Dark Mode (Default) */
+        html[data-theme="dark"],
+        html[data-theme="dark"] body {
+            background-color: #0b0f19;
+            color: #ffffff;
+        }
+
+        html[data-theme="dark"] .bg-dark {
+            background-color: #0b0f19;
+        }
+
+        html[data-theme="dark"] .text-light {
+            color: #ffffff;
+        }
+
+        /* Light Mode */
+        html[data-theme="light"],
+        html[data-theme="light"] body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        html[data-theme="light"] .bg-dark {
+            background-color: #f5f5f5;
+        }
+
+        html[data-theme="light"] .text-light {
+            color: #1a1a1a;
+        }
+
+        html[data-theme="light"] .glass-effect {
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        html[data-theme="light"] .text-gray-400 {
+            color: #666666;
+        }
+
+        html[data-theme="light"] .text-gray-500 {
+            color: #888888;
+        }
+
+        html[data-theme="light"] .border-white\/20 {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        html[data-theme="light"] .bg-white\/5 {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body class="bg-[#0b0f19] text-white">
+<body class="transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
