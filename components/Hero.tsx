@@ -1,7 +1,10 @@
 
 import React, { useRef, useEffect } from 'react';
+import { TypewriterText } from './TypewriterText';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -68,13 +71,13 @@ const Hero: React.FC = () => {
           {/* Left Column: Text Content */}
           <div className="order-2 lg:order-1 text-left">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
-              🚀 AI-Powered Web Development & Automation
+              🚀 {t('heroSubtitle')}
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-              Ubah Ide Bisnis Anda Menjadi <span className="gradient-text">Website Kelas Dunia</span>
+              {t('heroTitle')} <TypewriterText words={t('heroTypewriterWords').split('|')} className="gradient-text" />
             </h1>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
-              Halo, saya founder <span className="text-white font-semibold">RSA Studio</span>. Kami membantu bisnis, startup, dan personal brand membangun website profesional, aplikasi full stack, dan sistem AI automation untuk meningkatkan konversi dan profit bisnis Anda secara signifikan.
+              {t('heroDescription')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">

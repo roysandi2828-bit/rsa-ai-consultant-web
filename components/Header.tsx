@@ -1,8 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,17 +33,53 @@ const Header: React.FC = () => {
         </a>
         
         <div className="hidden md:flex space-x-8 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400">
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-white transition-colors">Beranda</a>
-          <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="hover:text-white transition-colors">Layanan</a>
-          <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-white transition-colors">Portfolio</a>
-          <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="hover:text-white transition-colors">Paket</a>
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-white transition-colors">{t('navBeranda')}</a>
+          <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="hover:text-white transition-colors">{t('navLayanan')}</a>
+          <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-white transition-colors">{t('navPortfolio')}</a>
+          <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="hover:text-white transition-colors">{t('navPaket')}</a>
+        </div>
+
+        {/* Language and Theme Toggles */}
+        <div className="hidden md:flex items-center gap-3 border-l border-white/20 pl-6 ml-4">
+          {/* Language Toggle */}
+          <div className="flex items-center gap-1 bg-white/5 rounded-full p-1">
+            <button
+              onClick={() => setLanguage('id')}
+              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                language === 'id'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              ID
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                language === 'en'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              EN
+            </button>
+          </div>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="text-lg hover:scale-110 transition-transform p-2"
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
         </div>
 
         <button 
           onClick={(e) => handleNavClick(e, 'contact')}
           className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-8 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-blue-500/20 active:scale-95"
         >
-          Konsultasi Gratis
+          {t('navKonsultasi')}
         </button>
 
         {/* Mobile Menu Icon */}
