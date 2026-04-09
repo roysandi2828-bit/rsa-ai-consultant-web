@@ -18,20 +18,18 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     if (savedTheme) {
       setThemeState(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light');
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove('light');
       }
     } else {
       // Use system preference if available
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const initialTheme: Theme = prefersDark ? 'dark' : 'light';
       setThemeState(initialTheme);
-      document.documentElement.setAttribute('data-theme', initialTheme);
-      if (initialTheme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (initialTheme === 'light') {
+        document.documentElement.classList.add('light');
       }
     }
   }, []);
@@ -39,13 +37,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
     
-    // Apply/remove dark class for Tailwind dark mode support
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
+    // Apply light class for light mode, remove for dark mode
+    if (newTheme === 'light') {
+      document.documentElement.classList.add('light');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('light');
     }
   };
 
