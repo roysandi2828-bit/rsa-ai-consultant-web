@@ -94,7 +94,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">Email Kami</div>
-                      <div className="font-bold">hello@rsastudio.web.id</div>
+                      <div className="font-bold">admin@rsastudio.web.id</div>
                     </div>
                   </div>
                   <a
