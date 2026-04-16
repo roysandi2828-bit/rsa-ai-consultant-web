@@ -170,8 +170,8 @@ export const DeviceMockups: React.FC = () => {
             </div>
 
             {/* Status Badge */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
-              <div className="flex items-right space-x-3">
+            <div className="absolute -bottom-8 right transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
+              <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
                   <div className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Status</div>
