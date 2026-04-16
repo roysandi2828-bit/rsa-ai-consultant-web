@@ -105,37 +105,57 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: User Photo */}
+          {/* Right Column: Animated Illustration */}
           <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
+            {/* Background Glow with Dynamic Animation */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 blur-3xl rounded-full group-hover:from-blue-600/30 group-hover:via-purple-600/30 group-hover:to-pink-600/30 transition-all duration-500 animate-pulse"></div>
 
             <div className="relative z-10 w-full max-w-md lg:max-w-2xl">
-              {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[700px]">
-                <img
-                  src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
-                  alt="Founder RSA Studio"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-40"></div>
+              {/* Main Illustration Container with Floating Animation */}
+              <style>{`
+                @keyframes floating {
+                  0%, 100% { transform: translateY(0px) rotate(0deg); }
+                  25% { transform: translateY(-15px) rotate(1deg); }
+                  50% { transform: translateY(-30px) rotate(0deg); }
+                  75% { transform: translateY(-15px) rotate(-1deg); }
+                }
+                @keyframes gentle-glow {
+                  0%, 100% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 25px 50px rgba(0, 0, 0, 0.3); }
+                  50% { box-shadow: 0 0 60px rgba(168, 85, 247, 0.4), 0 25px 50px rgba(0, 0, 0, 0.4); }
+                }
+                .hero-illustration {
+                  animation: floating 6s ease-in-out infinite;
+                }
+                .hero-illustration-wrapper {
+                  animation: gentle-glow 4s ease-in-out infinite;
+                }
+              `}</style>
+              
+              <div className="hero-illustration-wrapper relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.05] max-h-[700px]">
+                <div className="hero-illustration">
+                  <img
+                    src="/hero-illustration.png"
+                    alt="RSA Studio Services - Website, App Development, AI Automation"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
               </div>
 
-              {/* Floating Status Badge */}
-              <div className="absolute -bottom-6 -right-2 md:right-0 bg-[#1e293b] border border-white/10 p-4 rounded-2xl shadow-2xl animate-float">
+              {/* Floating Tech Badge */}
+              <div className="absolute -bottom-6 -right-2 md:right-0 bg-[#1e293b] border border-purple-500/30 p-4 rounded-2xl shadow-2xl animate-float">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
                   <div>
                     <div className="text-[10px] text-gray-400 uppercase font-black tracking-widest leading-none mb-1">Status</div>
-                    <div className="text-sm font-bold text-white">Available for Project</div>
+                    <div className="text-sm font-bold text-white">Ready for Projects</div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Expertise Badge */}
-              <div className="absolute top-10 -left-6 bg-blue-600/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-xl -rotate-12 hidden md:block">
-                <span className="text-xs font-bold text-white">Premium Web Solution</span>
+              {/* Floating Service Highlight */}
+              <div className="absolute top-10 -left-6 bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-xl -rotate-12 hidden md:block border border-white/20">
+                <span className="text-xs font-bold text-white">Full Stack Solutions</span>
               </div>
             </div>
           </div>
