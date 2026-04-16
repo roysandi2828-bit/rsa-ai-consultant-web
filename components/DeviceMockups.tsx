@@ -59,7 +59,7 @@ export const DeviceMockups: React.FC = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="flex-1 ml-4 text-xs text-gray-400">roysandiandrian.web.id</div>
+                <div className="flex-1 ml-4 text-xs text-gray-400">RSA Studio</div>
               </div>
 
               {/* Screen Content - Dynamic based on currentScreen */}
@@ -177,8 +177,7 @@ export const DeviceMockups: React.FC = () => {
             {/* Phone Bezel */}
             <div className="rounded-[3rem] bg-gradient-to-b from-gray-900 to-black p-2 shadow-2xl border-4 border-gray-800">
               {/* Status Bar */}
-              <div className="bg-gradient-to-b from-gray-900 to-black rounded-t-3xl px-3 py-2 flex items-center justify-between border-b border-gray-800">
-                <span className="text-xs text-white font-bold">9:41</span>
+              <div className="bg-gradient-to-b from-gray-900 to-black rounded-t-3xl px-3 py-2 flex items-center justify-end border-b border-gray-800">
                 <div className="flex space-x-1">
                   <div className="w-1 h-1 bg-white rounded-full"></div>
                   <div className="w-1 h-1 bg-white rounded-full"></div>
