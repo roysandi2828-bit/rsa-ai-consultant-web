@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { TypewriterText } from './TypewriterText';
 import { useLanguage } from '../context/LanguageContext';
+import DeviceMockups from './DeviceMockups';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -105,39 +106,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: User Photo */}
-          <div className="order-1 lg:order-2 relative group flex justify-center lg:justify-end px-4 md:px-0">
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-all duration-500"></div>
-
-            <div className="relative z-10 w-full max-w-md lg:max-w-2xl">
-              {/* Main Image Container */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] max-h-[700px]">
-                <img
-                  src="https://ik.imagekit.io/kploq48i9/Photo_Roy.jpeg"
-                  alt="Founder RSA Studio"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-40"></div>
-              </div>
-
-              {/* Floating Status Badge */}
-              <div className="absolute -bottom-6 -right-2 md:right-0 bg-[#1e293b] border border-white/10 p-4 rounded-2xl shadow-2xl animate-float">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <div>
-                    <div className="text-[10px] text-gray-400 uppercase font-black tracking-widest leading-none mb-1">Status</div>
-                    <div className="text-sm font-bold text-white">Available for Project</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Expertise Badge */}
-              <div className="absolute top-10 -left-6 bg-blue-600/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-xl -rotate-12 hidden md:block">
-                <span className="text-xs font-bold text-white">Premium Web Solution</span>
-              </div>
-            </div>
+          {/* Right Column: Device Mockups */}
+          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end px-4 md:px-0 min-h-[500px] lg:min-h-[600px]">
+            <DeviceMockups />
           </div>
 
         </div>
