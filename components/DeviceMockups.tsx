@@ -213,6 +213,7 @@ export const DeviceMockups: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
 
               {/* Screen Content - Dynamic based on currentScreen */}
               <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] overflow-hidden rounded-b-[2.2rem]">
