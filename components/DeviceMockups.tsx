@@ -183,8 +183,8 @@ export const DeviceMockups: React.FC = () => {
         </div>
 
         {/* Mobile Mockup */}
-        <div className="mobile-mockup mockup-glow relative md:relative z-10 h-[360px] md:h-[500px] lg:h-[640px] flex items-center">
-          <div className="w-[160px] sm:w-[200px] md:w-[200px] lg:w-[240px] h-full flex flex-col">
+        <div className="mobile-mockup mockup-glow relative md:relative z-10 h-[360px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
+          <div className="w-[220px] sm:w-[280px] md:w-[300px] lg:w-[340px] h-full flex flex-col">
             {/* Phone Outer Frame - iPhone Style */}
             <div className="rounded-[2.2rem] bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-2xl border-[6px] relative overflow-hidden h-full flex flex-col"
               style={{
@@ -195,13 +195,13 @@ export const DeviceMockups: React.FC = () => {
               {/* Screen Display Area */}
               <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] relative flex-shrink-0">
                 {/* Notch */}
-                <div className="flex justify-center pt-2 pb-3 relative z-10">
-                  <div className="w-24 h-5 bg-black rounded-b-2xl shadow-lg"></div>
+                <div className="flex justify-center pt-1.5 pb-2 relative z-10">
+                  <div className="w-20 h-4 bg-black rounded-b-xl shadow-lg"></div>
                 </div>
 
                 {/* Status Bar with Icons */}
-                <div className="px-4 py-1.5 flex items-center justify-between text-[9px] text-white bg-gradient-to-b from-black/30 to-transparent">
-                  <span className="font-bold">9:41</span>
+                <div className="px-3 py-1 flex items-center justify-between text-[8px] text-white bg-gradient-to-b from-black/30 to-transparent">
+                  <span className="font-bold text-[7px]">9:41</span>
                   <div className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
