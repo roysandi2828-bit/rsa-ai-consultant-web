@@ -38,10 +38,10 @@ const Header: React.FC = () => {
         </div>
 
         {/* Language Toggle */}
-        <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full p-1 border-l border-white/20 pl-6 ml-4">
+        <div className="flex items-center gap-1 bg-white/5 rounded-full p-1 border-l border-white/20 pl-4 md:pl-6 ml-2 md:ml-4">
           <button
             onClick={() => setLanguage('id')}
-            className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+            className={`px-2 md:px-3 py-1 rounded-full text-xs font-bold transition-all ${
               language === 'id'
                 ? 'bg-blue-600 text-white'
                 : 'text-gray-400 hover:text-white'
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
           </button>
           <button
             onClick={() => setLanguage('en')}
-            className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+            className={`px-2 md:px-3 py-1 rounded-full text-xs font-bold transition-all ${
               language === 'en'
                 ? 'bg-blue-600 text-white'
                 : 'text-gray-400 hover:text-white'

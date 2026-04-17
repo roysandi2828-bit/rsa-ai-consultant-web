@@ -45,11 +45,11 @@ export const DeviceMockups: React.FC = () => {
       `}</style>
 
       {/* Container */}
-      <div className="relative w-full max-w-6xl h-full flex items-center justify-center px-4 md:px-0">
-        
+      <div className="relative w-full max-w-6xl h-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
+
         {/* Laptop Mockup */}
-        <div className="laptop-mockup mockup-glow absolute left-0 md:left-auto md:relative z-20">
-          <div className="w-[420px] lg:w-[600px]">
+        <div className="laptop-mockup mockup-glow relative md:relative z-20">
+          <div className="w-[280px] sm:w-[320px] md:w-[420px] lg:w-[600px]">
             {/* Bezel */}
             <div className="rounded-[2.5rem] bg-gradient-to-b from-gray-800 to-gray-900 p-3 shadow-2xl border border-gray-700">
               {/* Browser Bar */}
@@ -170,7 +170,7 @@ export const DeviceMockups: React.FC = () => {
             </div>
 
             {/* Status Badge */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
+            <div className="absolute -bottom-8 right transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
@@ -183,8 +183,8 @@ export const DeviceMockups: React.FC = () => {
         </div>
 
         {/* Mobile Mockup */}
-        <div className="mobile-mockup mockup-glow relative z-10 ml-8 md:ml-0">
-          <div className="w-[220px] lg:w-[280px]">
+        <div className="mobile-mockup mockup-glow relative md:relative z-10">
+          <div className="w-[200px] sm:w-[240px] md:w-[220px] lg:w-[280px]">
             {/* Phone Bezel */}
             <div className="rounded-[3rem] bg-gradient-to-b from-gray-900 to-black p-2 shadow-2xl border-4 border-gray-800">
               {/* Status Bar */}
