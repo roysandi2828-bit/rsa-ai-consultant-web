@@ -184,11 +184,13 @@ export const DeviceMockups: React.FC = () => {
 
         {/* Mobile Mockup */}
         <div className="mobile-mockup mockup-glow relative md:relative z-10">
-          <div className="w-[200px] sm:w-[240px] md:w-[220px] lg:w-[280px]">
+          <div className="w-[160px] sm:w-[200px] md:w-[200px] lg:w-[240px]">
             {/* Phone Outer Frame - iPhone Style */}
-            <div className="rounded-[2.5rem] bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-2xl border-8 border-gray-900 relative overflow-hidden"
+            <div className="rounded-[2.2rem] bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-2xl border-[6px] relative overflow-hidden"
               style={{
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(100, 200, 255, 0.1)'
+                borderColor: '#1a1a1a',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(100, 200, 255, 0.15)',
+                aspectRatio: '9 / 19.5'
               }}>
               
               {/* Screen Display Area */}
@@ -216,8 +218,8 @@ export const DeviceMockups: React.FC = () => {
               </div>
 
               {/* Screen Content - Dynamic based on currentScreen */}
-              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] overflow-hidden rounded-b-[2.2rem]">
-                <div className="aspect-square flex flex-col justify-center items-center p-3 transition-opacity duration-500">
+              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] overflow-hidden rounded-b-[2.0rem] flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col justify-center items-center p-2.5 transition-opacity duration-500 overflow-y-auto">
                   {/* Screen 0: Hero Mobile */}
                   {currentScreen === 0 && (
                     <>
