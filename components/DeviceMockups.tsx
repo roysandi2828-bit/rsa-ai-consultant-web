@@ -48,10 +48,10 @@ export const DeviceMockups: React.FC = () => {
       <div className="relative w-full max-w-6xl h-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
 
         {/* Laptop Mockup */}
-        <div className="laptop-mockup mockup-glow relative md:relative z-20">
-          <div className="w-[280px] sm:w-[320px] md:w-[420px] lg:w-[600px]">
+        <div className="laptop-mockup mockup-glow relative md:relative z-20 h-[360px] md:h-[500px] lg:h-[640px] flex items-center">
+          <div className="w-[280px] sm:w-[320px] md:w-[420px] lg:w-[600px] h-full flex flex-col">
             {/* Bezel */}
-            <div className="rounded-[2.5rem] bg-gradient-to-b from-gray-800 to-gray-900 p-3 shadow-2xl border border-gray-700">
+            <div className="rounded-[2.5rem] bg-gradient-to-b from-gray-800 to-gray-900 p-3 shadow-2xl border border-gray-700 h-full flex flex-col">
               {/* Browser Bar */}
               <div className="bg-gradient-to-b from-gray-700 to-gray-800 rounded-t-2xl px-4 py-3 flex items-center space-x-2 border-b border-gray-600">
                 <div className="flex space-x-2">
@@ -63,8 +63,8 @@ export const DeviceMockups: React.FC = () => {
               </div>
 
               {/* Screen Content - Dynamic based on currentScreen */}
-              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] rounded-b-2xl overflow-hidden">
-                <div className="aspect-video flex flex-col justify-center items-center p-6 md:p-8 transition-opacity duration-500">
+              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] rounded-b-2xl overflow-hidden flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col justify-center items-center p-6 md:p-8 transition-opacity duration-500">
                   {/* Screen 0: Hero/Services */}
                   {currentScreen === 0 && (
                     <>
@@ -183,18 +183,17 @@ export const DeviceMockups: React.FC = () => {
         </div>
 
         {/* Mobile Mockup */}
-        <div className="mobile-mockup mockup-glow relative md:relative z-10">
-          <div className="w-[160px] sm:w-[200px] md:w-[200px] lg:w-[240px]">
+        <div className="mobile-mockup mockup-glow relative md:relative z-10 h-[360px] md:h-[500px] lg:h-[640px] flex items-center">
+          <div className="w-[160px] sm:w-[200px] md:w-[200px] lg:w-[240px] h-full flex flex-col">
             {/* Phone Outer Frame - iPhone Style */}
-            <div className="rounded-[2.2rem] bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-2xl border-[6px] relative overflow-hidden"
+            <div className="rounded-[2.2rem] bg-gradient-to-b from-gray-800 via-gray-900 to-black shadow-2xl border-[6px] relative overflow-hidden h-full flex flex-col"
               style={{
                 borderColor: '#1a1a1a',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(100, 200, 255, 0.15)',
-                aspectRatio: '9 / 19.5'
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(100, 200, 255, 0.15)'
               }}>
               
               {/* Screen Display Area */}
-              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] relative">
+              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] relative flex-shrink-0">
                 {/* Notch */}
                 <div className="flex justify-center pt-2 pb-3 relative z-10">
                   <div className="w-24 h-5 bg-black rounded-b-2xl shadow-lg"></div>
@@ -219,7 +218,7 @@ export const DeviceMockups: React.FC = () => {
 
               {/* Screen Content - Dynamic based on currentScreen */}
               <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] overflow-hidden rounded-b-[2.0rem] flex-1 flex flex-col">
-                <div className="flex-1 flex flex-col justify-center items-center p-2.5 transition-opacity duration-500 overflow-y-auto">
+                <div className="flex-1 flex flex-col justify-center items-center px-2 py-3 transition-opacity duration-500">
                   {/* Screen 0: Hero Mobile */}
                   {currentScreen === 0 && (
                     <>
