@@ -404,10 +404,6 @@ export const DeviceMockups: React.FC = () => {
                           <p className="text-[8px] text-gray-400">✓ Real-time Monitoring & Alerts</p>
                         </div>
                       </div>
-                        <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
-                          <span className="text-2xl mb-1">🧠</span>
-                          <span className="text-[8px] text-pink-300 font-bold text-center">AI Learning</span>
-                        </div>
                         <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
                           <span className="text-2xl mb-1">⚡</span>
                           <span className="text-[8px] text-indigo-300 font-bold text-center">Real-time</span>
