@@ -404,27 +404,6 @@ export const DeviceMockups: React.FC = () => {
                           <p className="text-[8px] text-gray-400">✓ Real-time Monitoring & Alerts</p>
                         </div>
                       </div>
-                        <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
-                          <span className="text-2xl mb-1">⚡</span>
-                          <span className="text-[8px] text-indigo-300 font-bold text-center">Real-time</span>
-                        </div>
-                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
-                          <span className="text-2xl mb-1">���</span>
-                          <span className="text-[8px] text-cyan-300 font-bold text-center">Integration</span>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-[9px] text-gray-300 mb-4 leading-relaxed">Automate your workflows and save time with AI-powered tools. Integrate seamlessly with your existing systems.</p>
-
-                      {/* Benefits Box */}
-                      <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 mb-4 flex-1">
-                        <div className="space-y-1">
-                          <p className="text-[8px] text-gray-400">✓ 24/7 Automated Workflows</p>
-                          <p className="text-[8px] text-gray-400">✓ AI-Powered Decision Making</p>
-                          <p className="text-[8px] text-gray-400">✓ Real-time Monitoring & Alerts</p>
-                        </div>
-                      </div>
 
                       {/* CTA Button */}
                       <button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-white text-[10px] font-bold py-2.5 hover:shadow-lg hover:shadow-purple-500/50 transition-all mb-3">
