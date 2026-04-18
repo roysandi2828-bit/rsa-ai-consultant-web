@@ -45,7 +45,7 @@ export const DeviceMockups: React.FC = () => {
       `}</style>
 
       {/* Container */}
-      <div className="relative w-full max-w-6xl flex flex-col items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
+      <div className="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
 
         {/* Laptop Mockup */}
         <div className="laptop-mockup mockup-glow relative md:relative z-20">
@@ -170,7 +170,7 @@ export const DeviceMockups: React.FC = () => {
             </div>
 
             {/* Status Badge */}
-            <div className="absolute -bottom-8 -right-32 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
+            <div className="absolute -bottom-8 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
