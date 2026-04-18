@@ -369,16 +369,41 @@ export const DeviceMockups: React.FC = () => {
                       </div>
 
                       {/* Title */}
-                      <h2 className="text-lg font-black text-white mb-3 leading-tight">
+                      <h2 className="text-lg font-black text-white mb-4 leading-tight">
                         Smart <span className="text-purple-400">Automation</span>
                       </h2>
 
-                      {/* Features Grid */}
-                      <div className="grid grid-cols-2 gap-2 mb-4">
-                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
-                          <span className="text-2xl mb-1">⚙️</span>
-                          <span className="text-[8px] text-purple-300 font-bold text-center">Automation</span>
+                      {/* Features Grid - Larger Size */}
+                      <div className="grid grid-cols-2 gap-2.5 mb-4 flex-1">
+                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
+                          <span className="text-4xl mb-2">⚙️</span>
+                          <span className="text-[9px] text-purple-300 font-bold text-center">Automation</span>
                         </div>
+                        <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
+                          <span className="text-4xl mb-2">🧠</span>
+                          <span className="text-[9px] text-pink-300 font-bold text-center">AI Learning</span>
+                        </div>
+                        <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
+                          <span className="text-4xl mb-2">⚡</span>
+                          <span className="text-[9px] text-indigo-300 font-bold text-center">Real-time</span>
+                        </div>
+                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
+                          <span className="text-4xl mb-2">🔗</span>
+                          <span className="text-[9px] text-cyan-300 font-bold text-center">Integration</span>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-[8px] text-gray-400 mb-3 leading-relaxed">Automate your workflows and save time with AI-powered tools. Integrate seamlessly with existing systems.</p>
+
+                      {/* Benefits Box */}
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 mb-3">
+                        <div className="space-y-0.5">
+                          <p className="text-[8px] text-gray-400">✓ 24/7 Automated Workflows</p>
+                          <p className="text-[8px] text-gray-400">✓ AI-Powered Decision Making</p>
+                          <p className="text-[8px] text-gray-400">✓ Real-time Monitoring & Alerts</p>
+                        </div>
+                      </div>
                         <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
                           <span className="text-2xl mb-1">🧠</span>
                           <span className="text-[8px] text-pink-300 font-bold text-center">AI Learning</span>
@@ -388,7 +413,7 @@ export const DeviceMockups: React.FC = () => {
                           <span className="text-[8px] text-indigo-300 font-bold text-center">Real-time</span>
                         </div>
                         <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
-                          <span className="text-2xl mb-1">🔗</span>
+                          <span className="text-2xl mb-1">���</span>
                           <span className="text-[8px] text-cyan-300 font-bold text-center">Integration</span>
                         </div>
                       </div>
