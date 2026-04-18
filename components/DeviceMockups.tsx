@@ -45,7 +45,7 @@ export const DeviceMockups: React.FC = () => {
       `}</style>
 
       {/* Container */}
-      <div className="relative w-full max-w-6xl h-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
+      <div className="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
 
         {/* Laptop Mockup */}
         <div className="laptop-mockup mockup-glow relative md:relative z-20">
@@ -170,7 +170,7 @@ export const DeviceMockups: React.FC = () => {
             </div>
 
             {/* Status Badge */}
-            <div className="absolute -bottom-8 right transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
+            <div className="absolute -bottom-8 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
@@ -201,96 +201,222 @@ export const DeviceMockups: React.FC = () => {
               </div>
 
               {/* Screen Content - Dynamic based on currentScreen */}
-              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] rounded-3xl overflow-hidden">
-                <div className="aspect-square flex flex-col justify-center items-center p-4 transition-opacity duration-500">
+              <div className="bg-gradient-to-b from-[#0b0f19] via-[#1a1f35] to-[#0b0f19] rounded-3xl overflow-hidden flex flex-col">
+                <div className="flex-1 flex flex-col overflow-y-auto p-3.5 transition-opacity duration-500">
                   {/* Screen 0: Hero Mobile */}
                   {currentScreen === 0 && (
-                    <>
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-3">
-                        <span className="text-xs font-black text-white">R</span>
+                    <div className="flex flex-col h-full">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[9px] font-bold text-white">RSA STUDIO</span>
+                        <div className="w-4 h-4 border border-gray-600 rounded flex items-center justify-center">
+                          <span className="text-[6px] text-gray-400">≡</span>
+                        </div>
                       </div>
-                      <h2 className="text-sm font-black text-white text-center mb-2">
-                        Website <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Profesional</span>
+
+                      {/* AI Badge */}
+                      <div className="inline-flex items-center gap-1 bg-purple-600/30 border border-purple-500/40 rounded-full px-2.5 py-1 mb-3 w-fit">
+                        <span className="text-[7px] font-bold text-purple-300">✨ AI-POWERED</span>
+                      </div>
+
+                      {/* Heading */}
+                      <h2 className="text-xl font-black text-white mb-3 leading-tight">
+                        Website <span className="text-cyan-400">Profesional</span>
                       </h2>
-                      <p className="text-[10px] text-gray-400 text-center mb-3">Solutions for your business</p>
-                      <button className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white text-xs font-bold mb-3">
+
+                      {/* Description */}
+                      <p className="text-[9px] text-gray-400 mb-4 leading-relaxed">Professional websites & full-stack applications built for growth</p>
+
+                      {/* Stats Grid */}
+                      <div className="grid grid-cols-3 gap-2 mb-4">
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-blue-400">50+</div>
+                          <div className="text-[7px] text-gray-500 uppercase">Projects</div>
+                        </div>
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-green-400">5x</div>
+                          <div className="text-[7px] text-gray-500 uppercase">Growth</div>
+                        </div>
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-purple-400">100%</div>
+                          <div className="text-[7px] text-gray-500 uppercase">Satisfied</div>
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-white text-[10px] font-bold py-2.5 mb-4 hover:shadow-lg hover:shadow-purple-500/50 transition-all">
                         Mulai Sekarang
                       </button>
-                      <div className="space-y-2 w-full">
-                        <div className="flex items-center space-x-2 text-[10px] text-gray-400">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-                          <span>Premium Design</span>
+
+                      {/* Features Checklist */}
+                      <div className="space-y-1.5 flex-1">
+                        <div className="flex items-center space-x-2 text-[9px] text-gray-300">
+                          <span className="text-cyan-400">✓</span>
+                          <span>Premium Responsive Design</span>
                         </div>
-                        <div className="flex items-center space-x-2 text-[10px] text-gray-400">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-                          <span>Fast Loading</span>
+                        <div className="flex items-center space-x-2 text-[9px] text-gray-300">
+                          <span className="text-cyan-400">✓</span>
+                          <span>Lightning Fast Loading</span>
                         </div>
-                        <div className="flex items-center space-x-2 text-[10px] text-gray-400">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-                          <span>Full Support</span>
+                        <div className="flex items-center space-x-2 text-[9px] text-gray-300">
+                          <span className="text-cyan-400">✓</span>
+                          <span>24/7 Expert Support</span>
                         </div>
                       </div>
-                    </>
+
+                      {/* Testimonial */}
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-2 mt-auto">
+                        <div className="flex items-start gap-2">
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex-shrink-0"></div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-[8px] text-gray-300 leading-tight mb-0.5">Recommended by professionals</p>
+                            <div className="flex gap-0.5">
+                              {[...Array(5)].map((_, i) => <span key={i} className="text-[6px]">⭐</span>)}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom Nav */}
+                      <div className="flex items-center justify-around mt-3 pt-2 border-t border-white/10">
+                        <span className="text-[7px] text-gray-500">Home</span>
+                        <span className="text-[7px] text-gray-500">Plus</span>
+                        <span className="text-[7px] text-gray-500">Menu</span>
+                      </div>
+                    </div>
                   )}
 
                   {/* Screen 1: Analytics Mobile */}
                   {currentScreen === 1 && (
-                    <>
-                      <div className="text-center mb-3 w-full">
-                        <div className="text-xs font-bold text-cyan-400 mb-2">📊 Analytics</div>
-                        <div className="grid grid-cols-2 gap-2 w-full">
-                          <div className="bg-cyan-600/20 border border-cyan-500/30 rounded p-2">
-                            <div className="text-xs text-cyan-400 font-bold">2.5K</div>
-                            <div className="text-[9px] text-gray-500">Visitors</div>
-                          </div>
-                          <div className="bg-green-600/20 border border-green-500/30 rounded p-2">
-                            <div className="text-xs text-green-400 font-bold">48%</div>
-                            <div className="text-[9px] text-gray-500">Growth</div>
-                          </div>
+                    <div className="flex flex-col h-full">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[9px] font-bold text-white">RSA STUDIO</span>
+                        <div className="w-4 h-4 border border-gray-600 rounded flex items-center justify-center">
+                          <span className="text-[6px] text-gray-400">≡</span>
                         </div>
                       </div>
-                      <div className="w-full bg-white/5 border border-white/10 rounded p-2 mb-3">
-                        <div className="flex items-end space-x-1 h-8">
-                          <div className="flex-1 bg-cyan-500 rounded h-3"></div>
-                          <div className="flex-1 bg-cyan-500 rounded h-4"></div>
-                          <div className="flex-1 bg-cyan-500 rounded h-5"></div>
-                          <div className="flex-1 bg-cyan-500 rounded h-3"></div>
+
+                      {/* Badge */}
+                      <div className="inline-flex items-center gap-1 bg-cyan-600/30 border border-cyan-500/40 rounded-full px-2.5 py-1 mb-3 w-fit">
+                        <span className="text-[7px] font-bold text-cyan-300">📊 ANALYTICS</span>
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-lg font-black text-white mb-3 leading-tight">
+                        Traffic <span className="text-cyan-400">Growth</span>
+                      </h2>
+
+                      {/* Metrics Grid */}
+                      <div className="grid grid-cols-3 gap-2 mb-4">
+                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-cyan-400">2.5K</div>
+                          <div className="text-[7px] text-gray-500">Visitors</div>
+                        </div>
+                        <div className="bg-green-600/20 border border-green-500/30 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-green-400">1.2K</div>
+                          <div className="text-[7px] text-gray-500">Conv.</div>
+                        </div>
+                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-2 text-center">
+                          <div className="text-sm font-black text-purple-400">48%</div>
+                          <div className="text-[7px] text-gray-500">Growth</div>
                         </div>
                       </div>
-                      <button className="px-3 py-1.5 bg-cyan-600 rounded-full text-white text-xs font-bold">
-                        View Details
+
+                      {/* Chart */}
+                      <div className="w-full bg-white/5 border border-white/10 rounded-lg p-3 mb-4">
+                        <div className="flex items-end justify-between h-16 gap-1">
+                          <div className="flex-1 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded h-8"></div>
+                          <div className="flex-1 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded h-10"></div>
+                          <div className="flex-1 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded h-12"></div>
+                          <div className="flex-1 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded h-9"></div>
+                        </div>
+                      </div>
+
+                      {/* Info Box */}
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 mb-4 flex-1">
+                        <p className="text-[8px] text-gray-300 leading-relaxed">Your website traffic increased by 48% this month with improved conversion rates across all channels.</p>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button className="w-full bg-cyan-600 rounded-full text-white text-[10px] font-bold py-2.5 hover:bg-cyan-500 transition-all">
+                        View Full Report
                       </button>
-                    </>
+
+                      {/* Bottom Nav */}
+                      <div className="flex items-center justify-around mt-3 pt-2 border-t border-white/10">
+                        <span className="text-[7px] text-gray-500">Home</span>
+                        <span className="text-[7px] text-gray-500">Plus</span>
+                        <span className="text-[7px] text-gray-500">Menu</span>
+                      </div>
+                    </div>
                   )}
 
                   {/* Screen 2: AI Features Mobile */}
                   {currentScreen === 2 && (
-                    <>
-                      <div className="text-center mb-3 w-full">
-                        <div className="text-xs font-bold text-purple-400 mb-3">🤖 AI Features</div>
-                        <div className="grid grid-cols-2 gap-2 w-full">
-                          <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-2 flex flex-col items-center">
-                            <span className="text-lg">⚙️</span>
-                            <span className="text-[9px] text-purple-400 mt-1">Automation</span>
-                          </div>
-                          <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-2 flex flex-col items-center">
-                            <span className="text-lg">🧠</span>
-                            <span className="text-[9px] text-pink-400 mt-1">AI Smart</span>
-                          </div>
-                          <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-2 flex flex-col items-center">
-                            <span className="text-lg">⚡</span>
-                            <span className="text-[9px] text-indigo-400 mt-1">Real-time</span>
-                          </div>
-                          <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-2 flex flex-col items-center">
-                            <span className="text-lg">🔗</span>
-                            <span className="text-[9px] text-cyan-400 mt-1">Integrate</span>
-                          </div>
+                    <div className="flex flex-col h-full">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[9px] font-bold text-white">RSA STUDIO</span>
+                        <div className="w-4 h-4 border border-gray-600 rounded flex items-center justify-center">
+                          <span className="text-[6px] text-gray-400">≡</span>
                         </div>
                       </div>
-                      <button className="px-3 py-1.5 bg-purple-600 rounded-full text-white text-xs font-bold">
-                        Explore AI
+
+                      {/* Badge */}
+                      <div className="inline-flex items-center gap-1 bg-purple-600/30 border border-purple-500/40 rounded-full px-2.5 py-1 mb-3 w-fit">
+                        <span className="text-[7px] font-bold text-purple-300">🤖 AI AUTOMATION</span>
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-lg font-black text-white mb-4 leading-tight">
+                        Smart <span className="text-purple-400">Automation</span>
+                      </h2>
+
+                      {/* Features Grid */}
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">⚙️</span>
+                          <span className="text-[8px] text-purple-300 font-bold text-center">Automation</span>
+                        </div>
+                        <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">🧠</span>
+                          <span className="text-[8px] text-pink-300 font-bold text-center">AI Learning</span>
+                        </div>
+                        <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">⚡</span>
+                          <span className="text-[8px] text-indigo-300 font-bold text-center">Real-time</span>
+                        </div>
+                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">🔗</span>
+                          <span className="text-[8px] text-cyan-300 font-bold text-center">Integration</span>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-[8px] text-gray-400 mb-3 leading-relaxed">Automate your workflows and save time with AI-powered tools. Integrate seamlessly with existing systems.</p>
+
+                      {/* Benefits Box */}
+                      <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 mb-3">
+                        <div className="space-y-0.5">
+                          <p className="text-[8px] text-gray-400">✓ 24/7 Automated Workflows</p>
+                          <p className="text-[8px] text-gray-400">✓ AI-Powered Decision Making</p>
+                          <p className="text-[8px] text-gray-400">✓ Real-time Monitoring & Alerts</p>
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-white text-[10px] font-bold py-2.5 hover:shadow-lg hover:shadow-purple-500/50 transition-all mb-3">
+                        Activate AI
                       </button>
-                    </>
+
+                      {/* Bottom Nav */}
+                      <div className="flex items-center justify-around pt-2 border-t border-white/10">
+                        <span className="text-[7px] text-gray-500">Home</span>
+                        <span className="text-[7px] text-gray-500">Plus</span>
+                        <span className="text-[7px] text-gray-500">Menu</span>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>

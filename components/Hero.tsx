@@ -67,10 +67,10 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" style={{ zIndex: 2 }}></div>
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-center lg:pt-0">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-center lg:pt-0">
 
           {/* Left Column: Text Content */}
-          <div className="order-2 lg:order-1 text-left">
+          <div className="text-left w-full lg:w-1/2">
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 {t('heroSubtitle')}
             </div>
@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Device Mockups */}
-          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end px-4 md:px-0 min-h-[500px] lg:min-h-[600px]">
+          <div className="relative flex justify-center lg:justify-end px-4 md:px-0 w-full lg:w-1/2">
             <DeviceMockups />
           </div>
 
