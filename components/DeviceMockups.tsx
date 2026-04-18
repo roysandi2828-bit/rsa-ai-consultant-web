@@ -45,7 +45,7 @@ export const DeviceMockups: React.FC = () => {
       `}</style>
 
       {/* Container */}
-      <div className="relative w-full max-w-6xl h-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
+      <div className="relative w-full max-w-6xl flex flex-col items-center justify-center gap-4 md:gap-8 px-2 md:px-0">
 
         {/* Laptop Mockup */}
         <div className="laptop-mockup mockup-glow relative md:relative z-20">
@@ -170,7 +170,7 @@ export const DeviceMockups: React.FC = () => {
             </div>
 
             {/* Status Badge */}
-            <div className="absolute -bottom-8 right transform -translate-x-1/2 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
+            <div className="absolute -bottom-8 -right-32 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-lg px-4 py-2 shadow-xl whitespace-nowrap">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
@@ -373,23 +373,23 @@ export const DeviceMockups: React.FC = () => {
                         Smart <span className="text-purple-400">Automation</span>
                       </h2>
 
-                      {/* Features Grid - Larger Size */}
-                      <div className="grid grid-cols-2 gap-2.5 mb-4 flex-1">
-                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
-                          <span className="text-4xl mb-2">⚙️</span>
-                          <span className="text-[9px] text-purple-300 font-bold text-center">Automation</span>
+                      {/* Features Grid */}
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        <div className="bg-purple-600/20 border border-purple-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">⚙️</span>
+                          <span className="text-[8px] text-purple-300 font-bold text-center">Automation</span>
                         </div>
-                        <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
-                          <span className="text-4xl mb-2">🧠</span>
-                          <span className="text-[9px] text-pink-300 font-bold text-center">AI Learning</span>
+                        <div className="bg-pink-600/20 border border-pink-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">🧠</span>
+                          <span className="text-[8px] text-pink-300 font-bold text-center">AI Learning</span>
                         </div>
-                        <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
-                          <span className="text-4xl mb-2">⚡</span>
-                          <span className="text-[9px] text-indigo-300 font-bold text-center">Real-time</span>
+                        <div className="bg-indigo-600/20 border border-indigo-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">⚡</span>
+                          <span className="text-[8px] text-indigo-300 font-bold text-center">Real-time</span>
                         </div>
-                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-20">
-                          <span className="text-4xl mb-2">🔗</span>
-                          <span className="text-[9px] text-cyan-300 font-bold text-center">Integration</span>
+                        <div className="bg-cyan-600/20 border border-cyan-500/30 rounded-lg p-3 flex flex-col items-center justify-center">
+                          <span className="text-2xl mb-1">🔗</span>
+                          <span className="text-[8px] text-cyan-300 font-bold text-center">Integration</span>
                         </div>
                       </div>
 
