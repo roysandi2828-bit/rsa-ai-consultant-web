@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -69,12 +70,72 @@ const Header: React.FC = () => {
         </button>
 
         {/* Mobile Menu Icon */}
-        <button className="md:hidden text-white p-2" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+        <button 
+          className="md:hidden text-white p-2" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-blue-500">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-white/10 shadow-xl">
+          <div className="container mx-auto px-6 py-6 space-y-4">
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                handleNavClick(e, 'home');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="block text-lg font-bold uppercase tracking-[0.1em] text-gray-300 hover:text-white transition-colors py-2"
+            >
+              {t('navBeranda')}
+            </a>
+            <a 
+              href="#services" 
+              onClick={(e) => {
+                handleNavClick(e, 'services');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="block text-lg font-bold uppercase tracking-[0.1em] text-gray-300 hover:text-white transition-colors py-2"
+            >
+              {t('navLayanan')}
+            </a>
+            <a 
+              href="#portfolio" 
+              onClick={(e) => {
+                handleNavClick(e, 'portfolio');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="block text-lg font-bold uppercase tracking-[0.1em] text-gray-300 hover:text-white transition-colors py-2"
+            >
+              {t('navPortfolio')}
+            </a>
+            <a 
+              href="#pricing" 
+              onClick={(e) => {
+                handleNavClick(e, 'pricing');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="block text-lg font-bold uppercase tracking-[0.1em] text-gray-300 hover:text-white transition-colors py-2"
+            >
+              {t('navPaket')}
+            </a>
+            <button 
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold text-lg transition-all mt-4"
+            >
+              {t('navKonsultasi')}
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
