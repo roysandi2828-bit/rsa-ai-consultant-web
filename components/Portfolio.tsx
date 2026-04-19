@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const projects = [
   {
@@ -46,6 +47,7 @@ const projects = [
 ];
 
 const Portfolio: React.FC = () => {
+  const { t } = useLanguage();
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -58,8 +60,8 @@ const Portfolio: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 space-y-4 md:space-y-0">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Karya Terbaru Kami</h2>
-            <p className="text-gray-400">Setiap proyek dikerjakan dengan penuh ketelitian untuk menghasilkan kualitas yang melebihi ekspektasi klien.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('portfolioTitle')}</h2>
+            <p className="text-gray-400">{t('portfolioDescription')}</p>
           </div>
           <button
             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
