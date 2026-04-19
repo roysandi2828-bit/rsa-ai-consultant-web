@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
               🚀 {t('heroSubtitle')}
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight">
-              {t('heroTitle')} <TypewriterText words={t('heroTypewriterWords').split('|')} className="gradient-text" />
+              {t('heroTitle')} <br /> <TypewriterText words={t('heroTypewriterWords').split('|')} className="gradient-text" />
             </h1>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
               {t('heroDescription')}
