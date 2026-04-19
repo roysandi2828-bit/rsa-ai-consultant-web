@@ -44,7 +44,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({ words, className
   }, [charIndex, isDeleting, wordIndex, words]);
 
   return (
-    <span className={`inline-flex items-baseline gap-1 ${className}`}>
+    <span className={`inline-flex items-baseline gap-1 whitespace-nowrap ${className}`}>
       <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-emerald-500 bg-clip-text text-transparent">
         {displayText}
       </span>

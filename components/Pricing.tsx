@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const plans = [
   {
@@ -23,6 +24,7 @@ const plans = [
 ];
 
 const Pricing: React.FC = () => {
+  const { t } = useLanguage();
   const handleSelect = (planName: string) => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -34,8 +36,8 @@ const Pricing: React.FC = () => {
     <section id="pricing" className="py-24 bg-[#0d1321]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Investasi Website Anda</h2>
-          <p className="text-gray-400">Dapatkan penawaran harga terbaik yang disesuaikan dengan skala dan kebutuhan bisnis Anda.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">{t('pricingTitle')}</h2>
+          <p className="text-gray-400">{t('pricingDescription')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -43,7 +45,7 @@ const Pricing: React.FC = () => {
             <div key={idx} className={`relative p-8 rounded-3xl border transition-all duration-300 flex flex-col ${plan.isPopular ? 'border-blue-500 bg-blue-500/5 shadow-2xl shadow-blue-500/10 scale-105 z-10' : 'border-white/10 glass-effect opacity-90'}`}>
               {plan.isPopular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
-                  Paling Populer
+                  {t('pricingMostPopular')}
                 </div>
               )}
               <h3 className="text-xl font-bold text-gray-400 mb-2 uppercase tracking-widest">{plan.name}</h3>

@@ -34,6 +34,27 @@ export const translations = {
     contactMessage: "Ceritakan Proyek Anda",
     contactSubmit: "Kirim Pesan Sekarang",
     
+    // Services Section
+    servicesTitle: "Layanan Unggulan Kami",
+    servicesDescription: "Kami menyediakan solusi digital komprehensif untuk membantu bisnis Anda berkembang pesat di era digital.",
+    
+    // Portfolio Section
+    portfolioTitle: "Karya Terbaru Kami",
+    portfolioDescription: "Setiap proyek dikerjakan dengan penuh ketelitian untuk menghasilkan kualitas yang melebihi ekspektasi klien.",
+    
+    // Testimonials Section
+    testimonialsTitle: "Dipercaya oleh Ribuan Klien",
+    testimonialsSubtitle: "Dengarkan langsung dari para klien kami bagaimana RSA Studio telah mengubah bisnis mereka melalui solusi digital yang inovatif.",
+    
+    // Pricing Section
+    pricingTitle: "Investasi Website Anda",
+    pricingDescription: "Dapatkan penawaran harga terbaik yang disesuaikan dengan skala dan kebutuhan bisnis Anda.",
+    pricingMostPopular: "Paling Populer",
+    
+    // CTA Section
+    ctaTitle: "Mari Mulai Proyek Anda",
+    ctaDescription: "Siap mengubah ide bisnis Anda menjadi website kelas dunia?",
+    
     // Footer
     footerBeranda: "Landing Page",
     footerCompanyProfile: "Company Profile",
@@ -43,6 +64,15 @@ export const translations = {
     footerPortfolio: "Portfolio",
     footerDaftarPaket: "Daftar Paket",
     footerHubungiKami: "Hubungi Kami",
+    footerServices: "Layanan",
+    footerAboutCompany: "RSA Studio",
+    footerConsultation: "Konsultasi Gratis",
+    footerMission: "Membangun masa depan digital Indonesia melalui website yang inovatif, cepat, dan terukur.",
+    footerGetAnalysis: "Dapatkan analisis website gratis untuk bisnis Anda.",
+    footerStartNow: "Mulai Sekarang",
+    footerCopyright: "© 2024 RSA Studio. Hak Cipta Dilindungi Undang-Undang.",
+    footerTerms: "Syarat & Ketentuan",
+    footerPrivacy: "Kebijakan Privasi",
   },
   en: {
     // Hero Section
@@ -79,6 +109,27 @@ export const translations = {
     contactMessage: "Tell Us About Your Project",
     contactSubmit: "Send Message Now",
     
+    // Services Section
+    servicesTitle: "Our Featured Services",
+    servicesDescription: "We provide comprehensive digital solutions to help your business grow rapidly in the digital era.",
+    
+    // Portfolio Section
+    portfolioTitle: "Our Latest Works",
+    portfolioDescription: "Check out some of the amazing projects we've completed for our clients.",
+    
+    // Testimonials Section
+    testimonialsTitle: "Trusted by Thousands of Clients",
+    testimonialsSubtitle: "Hear directly from our clients how RSA Studio has transformed their business through innovative digital solutions.",
+    
+    // Pricing Section
+    pricingTitle: "Website Investment",
+    pricingDescription: "Get the best price offer tailored to your business scale and needs.",
+    pricingMostPopular: "Most Popular",
+    
+    // CTA Section
+    ctaTitle: "Let's Start Your Project",
+    ctaDescription: "Ready to transform your business idea into a world-class website?",
+    
     // Footer
     footerBeranda: "Landing Page",
     footerCompanyProfile: "Company Profile",
@@ -88,6 +139,15 @@ export const translations = {
     footerPortfolio: "Portfolio",
     footerDaftarPaket: "Packages",
     footerHubungiKami: "Contact Us",
+    footerServices: "Services",
+    footerAboutCompany: "RSA Studio",
+    footerConsultation: "Free Consultation",
+    footerMission: "Building Indonesia's digital future through innovative, fast, and measurable websites.",
+    footerGetAnalysis: "Get a free website analysis for your business.",
+    footerStartNow: "Start Now",
+    footerCopyright: "© 2024 RSA Studio. All Rights Reserved.",
+    footerTerms: "Terms & Conditions",
+    footerPrivacy: "Privacy Policy",
   }
 };
 

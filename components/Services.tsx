@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const services = [
   {
@@ -35,6 +36,7 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -43,8 +45,8 @@ const Services: React.FC = () => {
     <section id="services" className="py-24 bg-[#0d1321]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Layanan Unggulan Kami</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Kami menyediakan solusi digital komprehensif untuk membantu bisnis Anda berkembang pesat di era digital.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">{t('servicesTitle')}</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">{t('servicesDescription')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

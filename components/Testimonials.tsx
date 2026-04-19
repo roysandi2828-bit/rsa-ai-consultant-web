@@ -1,5 +1,6 @@
 import React from 'react';
 import { TestimonialCard, TestimonialAuthor } from './TestimonialCard';
+import { useLanguage } from '../context/LanguageContext';
 
 interface TestimonialData {
   author: TestimonialAuthor;
@@ -75,6 +76,7 @@ const testimonials: TestimonialData[] = [
 ];
 
 const Testimonials: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -85,10 +87,10 @@ const Testimonials: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Dipercaya oleh Ribuan</span> Klien di Indonesia
+            <span className="gradient-text">{t('testimonialsTitle')}</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Dengarkan langsung dari para klien kami bagaimana RSA Studio telah mengubah bisnis mereka melalui solusi digital yang inovatif.
+            {t('testimonialsSubtitle')}
           </p>
         </div>
 
