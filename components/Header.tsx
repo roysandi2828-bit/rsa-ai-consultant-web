@@ -27,7 +27,7 @@ const Header: React.FC = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-effect py-3 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl transition-transform group-hover:scale-110 shadow-lg shadow-blue-500/20 text-white">R</div>
+          <img src="/logo-rsa.jpg" alt="RSA Studio" className="w-12 h-12 rounded-lg object-cover transition-transform group-hover:scale-110 shadow-lg shadow-blue-500/20" />
           <span className="text-2xl font-extrabold tracking-tight text-white">RSA <span className="text-blue-500">Studio</span></span>
         </a>
         
