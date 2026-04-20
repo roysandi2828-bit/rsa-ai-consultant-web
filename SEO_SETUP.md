@@ -32,14 +32,14 @@ Saya telah menambahkan file dan konfigurasi penting untuk SEO. Berikut adalah la
 ### 1. **Setup Google Search Console**
 - Buka: https://search.google.com/search-console
 - Klik "Add Property"
-- Masukkan URL: https://rsastudio.vercel.app
+- Masukkan URL: https://rsastudio.web.id
 - Verifikasi ownership (pilih metode yang paling mudah)
-- Submit sitemap.xml (https://rsastudio.vercel.app/sitemap.xml)
+- Submit sitemap.xml (https://rsastudio.web.id/sitemap.xml)
 - Request indexing untuk halaman utama
 
 ### 2. **Setup Google Analytics**
 - Buka: https://analytics.google.com
-- Buat property baru untuk domain rsastudio.vercel.app
+- Buat property baru untuk domain rsastudio.web.id
 - Tambahkan tracking script ke website (atau update di index.html)
 
 ### 3. **Verifikasi di Bing Webmaster Tools**
