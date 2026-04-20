@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full glass-effect border-blue-500/20 text-blue-400 text-sm font-semibold tracking-wide animate-float">
               🚀 {t('heroSubtitle')}
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-extrabold mb-6 leading-tight">
               <div>Ubah Ide Bisnis</div>
               <div>Anda Menjadi</div>
               <TypewriterText words={t('heroTypewriterWords').split('|')} className="gradient-text" />
