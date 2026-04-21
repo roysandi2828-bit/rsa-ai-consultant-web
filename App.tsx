@@ -57,6 +57,11 @@ const App: React.FC = () => {
       setFormStatus('success');
       setTimeout(() => setFormStatus('idle'), 5000);
       (e.target as HTMLFormElement).reset();
+      
+      // Redirect to WhatsApp after successful submission
+      setTimeout(() => {
+        window.open('https://wa.me/6281399855043', '_blank');
+      }, 500);
     } catch (error) {
       console.error('Error saving lead:', error);
       setFormStatus('error');
