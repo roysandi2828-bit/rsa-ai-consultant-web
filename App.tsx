@@ -39,19 +39,6 @@ const App: React.FC = () => {
     };
 
     try {
-      // Send email and WhatsApp message via API
-      const response = await fetch('/api/send-lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(leadData)
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
       if (isSupabaseConfigured()) {
         // Simpan ke Supabase jika tersedia
         const { error } = await supabase.from('leads').insert([leadData]);
@@ -62,11 +49,19 @@ const App: React.FC = () => {
         const existingLeads = JSON.parse(localStorage.getItem('rsa_leads') || '[]');
         existingLeads.push(leadData);
         localStorage.setItem('rsa_leads', JSON.stringify(existingLeads));
+
+        // Beri sedikit delay untuk simulasi loading
+        await new Promise(resolve => setTimeout(resolve, 800));
       }
 
       setFormStatus('success');
       setTimeout(() => setFormStatus('idle'), 5000);
       (e.target as HTMLFormElement).reset();
+      
+      // Redirect to WhatsApp after successful submission
+      setTimeout(() => {
+        window.open('https://wa.me/6281399855043', '_blank');
+      }, 500);
     } catch (error) {
       console.error('Error saving lead:', error);
       setFormStatus('error');
@@ -148,7 +143,7 @@ const App: React.FC = () => {
                 ) : (
                   <>
                     <input name="full_name" type="text" required placeholder="Nama Lengkap" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
-                    <input name="email" type="email" required placeholder="Email Bisnis" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
+                    <input name="email" type="email" required placeholder="Email" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
                     <input name="phone" type="tel" required placeholder="Nomor WA" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
                     <select name="service" required className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-gray-400 cursor-pointer">
                       <option value="" className="bg-[#0b0f19]">Pilih Layanan</option>
