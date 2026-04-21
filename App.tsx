@@ -32,6 +32,7 @@ const App: React.FC = () => {
     const leadData = {
       full_name: formData.get('full_name'),
       email: formData.get('email'),
+      phone: formData.get('phone'),
       service: formData.get('service'),
       message: formData.get('message'),
       created_at: new Date().toISOString()
@@ -94,7 +95,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">Email Kami</div>
-                      <div className="font-bold">admin@rsastudio.web.id</div>
+                      <div className="font-bold">hello@rsastudio.web.id</div>
                     </div>
                   </div>
                   <a
@@ -137,7 +138,8 @@ const App: React.FC = () => {
                 ) : (
                   <>
                     <input name="full_name" type="text" required placeholder="Nama Lengkap" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
-                    <input name="email" type="email" required placeholder="Email Bisnis" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
+                    <input name="email" type="email" required placeholder="Email" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
+                    <input name="phone" type="tel" required placeholder="Nomor WA" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-white" />
                     <select name="service" required className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-colors text-gray-400 cursor-pointer">
                       <option value="" className="bg-[#0b0f19]">Pilih Layanan</option>
                       <option value="Landing Page" className="bg-[#0b0f19]">Landing Page</option>
